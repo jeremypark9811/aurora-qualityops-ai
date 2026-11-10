@@ -1,0 +1,33 @@
+# 로컬 개발용 PostgreSQL 한 개. npm 스크립트로 쓰는 게 편해요:
+#
+#   npm run db:up        # 백그라운드로 Postgres 기동 (localhost:5432)
+#   npm run db:down      # 정지 (데이터 유지)
+#   npm run db:reset     # 정지 + 데이터 삭제(초기화)
+#
+# .env.local 의 DATABASE_URL 이 아래 계정/포트와 맞아요:
+#   DATABASE_URL=postgres://postgres:postgres@localhost:5432/app
+#
+# 배포(axhub)에서는 이 파일을 안 써요 — axhub 가 전용 DB 를 발급하고 DATABASE_URL 을 주입해요.
+# 파일명이 docker-compose.yml 이 아닌 이유: 그 이름이면 배포 도구가 이 repo 를 compose 배포로
+# 오인해요 (여기엔 앱 컨테이너가 없어 첫 배포가 실패). 로컬 전용이라 .dev.yml 로 둬요 —
+# 직접 docker compose 를 쓸 땐 `-f docker-compose.dev.yml` 을 붙여야 해요.
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d app"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:

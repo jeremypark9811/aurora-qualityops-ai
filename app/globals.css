@@ -1,0 +1,4 @@
+/* 디자인 시스템(Tailwind 4 + HeroUI v3 + axhub design-system)은 axhub.css 가 전부 가져와요.
+   axhub.css 는 자동 생성이라 고치지 않아요. 이 앱에만 필요한 CSS 가 꼭 있으면 아래에 더하세요
+   (대부분은 Tailwind 클래스로 충분해요 — 화면 전용 CSS 파일은 만들지 않아요). */
+@import "./axhub.css";
