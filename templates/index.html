@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf }}">
+  <title>Aurora QualityOps AI · 품질 & 공급 복구</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='qualityops.css') }}">
+  <script defer src="{{ url_for('static', filename='qualityops.js') }}"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a href="#dashboard" class="brand"><span class="brand-mark">A</span><span>AURORA<small>QualityOps AI</small></span></a>
+    <div class="nav-label">품질 운영 워크스페이스</div>
+    <nav id="navigation" aria-label="주요 메뉴"></nav>
+    <div class="sidebar-bottom"><span class="live-dot"></span> 운영 상태 저장 중<small>Corevia Cosmetics · W03<br>문제 기준일 2026.07.01</small></div>
+  </aside>
+  <div class="app-frame">
+    <header class="topbar"><div><span class="eyebrow">COREVIA COSMETICS</span><span class="topbar-separator">/</span><span id="breadcrumb">품질 운영 개요</span></div><span class="environment">로컬 시연 환경</span></header>
+    <section class="role-bar" aria-label="시연용 역할 전환">
+      <div><strong>시연용 역할 전환</strong><small>실제 기업 인증이 아닌 모의 권한 · 모든 변경 기록</small></div>
+      <form id="role-form"><label class="sr-only" for="role">역할</label><select id="role" name="role"></select><label class="sr-only" for="actor">수행자 이름</label><input id="actor" name="actor" required maxlength="80" placeholder="수행자 이름"><button class="btn btn-secondary" type="submit">역할 적용</button></form>
+    </section>
+    <main id="content" tabindex="-1"><div class="loading">운영 데이터를 불러오고 있습니다…</div></main>
+    <footer>원본 사실 · 규칙 계산 · AI 해석 · 시연 가정을 구분합니다.<span>Aurora QualityOps AI</span></footer>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="modal"><div class="dialog-head"><h2 id="modal-title">상세</h2><button class="btn btn-secondary" id="modal-close" type="button">닫기</button></div><div id="modal-body"></div></dialog>
+</body>
+</html>

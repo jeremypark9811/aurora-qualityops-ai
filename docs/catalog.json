@@ -1,0 +1,5938 @@
+[
+  {
+    "path": "04_원본데이터/calculation_definitions (2).md",
+    "filename": "calculation_definitions (2).md",
+    "sha256": "889f7eb5018b455f05e9c934686c4926e97ef7624d5405975a3eedc5b107769d",
+    "bytes": 3817,
+    "modified_at": "2026-11-10T11:24:45.137032509",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# approval_authority_policy — 의사결정 권한(HITL 경계)",
+    "rows": 0,
+    "columns": [],
+    "warning": ""
+  },
+  {
+    "path": "04_원본데이터/celtonic_contract_summary (2).md",
+    "filename": "celtonic_contract_summary (2).md",
+    "sha256": "07f5cb64341e89ec5c190e5de9c99e4a71c432d34814dc1a7d77bd5a03b35e4e",
+    "bytes": 4091,
+    "modified_at": "2026-11-10T11:24:45.233241796",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 재무·운영",
+    "description": "SKU·채널별 원가·물류 기준",
+    "rows": 112,
+    "column_count": 6,
+    "columns": [
+      {
+        "name": "sku_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 14,
+        "sample": [
+          "SKU-1001",
+          "SKU-1001",
+          "SKU-1001"
+        ]
+      },
+      {
+        "name": "channel_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 8,
+        "sample": [
+          "CH-01",
+          "CH-02",
+          "CH-03"
+        ]
+      },
+      {
+        "name": "product_cost_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 6,
+        "sample": [
+          "21840",
+          "21840",
+          "21840"
+        ]
+      },
+      {
+        "name": "channel_fee_pct",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "% 여부는 정의 확인; pct는 %",
+        "unique": 5,
+        "sample": [
+          "3.0",
+          "13.0",
+          "10.0"
+        ]
+      },
+      {
+        "name": "shipping_cost_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 108,
+        "sample": [
+          "3435",
+          "2755",
+          "2933"
+        ]
+      },
+      {
+        "name": "return_logistics_cost_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 104,
+        "sample": [
+          "3165",
+          "3175",
+          "3926"
+        ]
+      }
+    ],
+    "identifiers": [
+      "sku_id",
+      "channel_id"
+    ],
+    "dates": {},
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/celtonic_customer_composition (2).csv",
+    "filename": "celtonic_customer_composition (2).csv",
+    "sha256": "d0b9806d32b859d96b6c3d18f7d30597b2993fd1068d2c3e0d2961bf1accb0b7",
+    "bytes": 195041,
+    "modified_at": "2026-11-10T11:24:45.240198612",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 마케팅",
+    "description": "주문별 쿠폰 할인·중복 적용",
+    "rows": 4672,
+    "column_count": 5,
+    "columns": [
+      {
+        "name": "coupon_use_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4672,
+        "sample": [
+          "CP-0000001",
+          "CP-0000002",
+          "CP-0000003"
+        ]
+      },
+      {
+        "name": "order_id",
+        "meaning": "수주 식별자; 배치 연결 표에는 없음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4672,
+        "sample": [
+          "MO-0000001",
+          "MO-0000003",
+          "MO-0000006"
+        ]
+      },
+      {
+        "name": "coupon_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 201,
+        "sample": [
+          "CPN1049",
+          "CPN1157",
+          "CPN1026"
+        ]
+      },
+      {
+        "name": "discount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 4360,
+        "sample": [
+          "18678",
+          "35469",
+          "50176"
+        ]
+      },
+      {
+        "name": "stacked_flag",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "boolean",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "True",
+          "False",
+          "True"
+        ]
+      }
+    ],
+    "identifiers": [
+      "coupon_use_id",
+      "order_id",
+      "coupon_id"
+    ],
+    "dates": {},
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/celtonic_financials_raw (2).csv",
+    "filename": "celtonic_financials_raw (2).csv",
+    "sha256": "6d49baa51fa822f401b75bf8bf850cca99541a07fe8464c0f0b75531576591c1",
+    "bytes": 102463,
+    "modified_at": "2026-11-10T11:24:45.252938747",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 마케팅",
+    "description": "매체 유입·클릭·전환",
+    "rows": 1211,
+    "column_count": 11,
+    "columns": [
+      {
+        "name": "inflow_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1211,
+        "sample": [
+          "TF-000001",
+          "TF-000002",
+          "TF-000003"
+        ]
+      },
+      {
+        "name": "date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 144,
+        "sample": [
+          "2025-01-01",
+          "2025-01-08",
+          "2025-01-15"
+        ]
+      },
+      {
+        "name": "channel_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 8,
+        "sample": [
+          "CH-03",
+          "CH-03",
+          "CH-03"
+        ]
+      },
+      {
+        "name": "campaign_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 34.352,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 26,
+        "sample": [
+          "CMP-0001",
+          "CMP-0001",
+          "CMP-0001"
+        ]
+      },
+      {
+        "name": "platform",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 34.352,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "YouTube",
+          "YouTube",
+          "YouTube"
+        ]
+      },
+      {
+        "name": "sns_format",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 34.352,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "롱폼",
+          "롱폼",
+          "롱폼"
+        ]
+      },
+      {
+        "name": "source",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "퍼포먼스광고",
+          "퍼포먼스광고",
+          "퍼포먼스광고"
+        ]
+      },
+      {
+        "name": "impressions",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1197,
+        "sample": [
+          "194346",
+          "143574",
+          "166729"
+        ]
+      },
+      {
+        "name": "clicks",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1093,
+        "sample": [
+          "4213",
+          "2645",
+          "3271"
+        ]
+      },
+      {
+        "name": "visits",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1092,
+        "sample": [
+          "3890",
+          "2257",
+          "3186"
+        ]
+      },
+      {
+        "name": "conversions",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 146,
+        "sample": [
+          "187",
+          "204",
+          "210"
+        ]
+      }
+    ],
+    "identifiers": [
+      "inflow_id",
+      "channel_id",
+      "campaign_id"
+    ],
+    "dates": {
+      "date": {
+        "min": "2025-01-01",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/celtonic_management_interview (2).md",
+    "filename": "celtonic_management_interview (2).md",
+    "sha256": "ea2c732c939fb1cfa0aa628e3b0a1a850a84855015b073ebef98cdfecbc61cdd",
+    "bytes": 430266,
+    "modified_at": "2026-11-10T11:24:45.247928619",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 마케팅",
+    "description": "고객별 재구매 이력",
+    "rows": 13105,
+    "column_count": 4,
+    "columns": [
+      {
+        "name": "customer_ref",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 13105,
+        "sample": [
+          "CU-000001",
+          "CU-000002",
+          "CU-000003"
+        ]
+      },
+      {
+        "name": "first_order_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 390,
+        "sample": [
+          "2025-01-27",
+          "2025-03-10",
+          "2025-01-29"
+        ]
+      },
+      {
+        "name": "reorder_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 84.38,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 367,
+        "sample": [
+          "2025-05-14",
+          "2025-06-23",
+          "2025-06-30"
+        ]
+      },
+      {
+        "name": "reorder_within_90d",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "boolean",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "False",
+          "False",
+          "False"
+        ]
+      }
+    ],
+    "identifiers": [
+      "customer_ref"
+    ],
+    "dates": {
+      "first_order_date": {
+        "min": "2025-01-01",
+        "max": "2026-06-30"
+      },
+      "reorder_date": {
+        "min": "2025-01-06",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/celtonic_news_clippings (2).md",
+    "filename": "celtonic_news_clippings (2).md",
+    "sha256": "45ac7d5007ccfdbe30eb409eea0e4b3ed90042ca5480f0abecff6fda9dad7bc4",
+    "bytes": 104938,
+    "modified_at": "2026-11-10T11:24:45.250935316",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 고객지원·재무",
+    "description": "반품·환불 승인 실적",
+    "rows": 1719,
+    "column_count": 6,
+    "columns": [
+      {
+        "name": "return_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1719,
+        "sample": [
+          "RT-0000001",
+          "RT-0000002",
+          "RT-0000003"
+        ]
+      },
+      {
+        "name": "order_id",
+        "meaning": "수주 식별자; 배치 연결 표에는 없음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1719,
+        "sample": [
+          "MO-0000007",
+          "MO-0000011",
+          "MO-0000020"
+        ]
+      },
+      {
+        "name": "refund_completed_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 363,
+        "sample": [
+          "2025-01-23",
+          "2025-05-27",
+          "2025-05-02"
+        ]
+      },
+      {
+        "name": "original_order_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 372,
+        "sample": [
+          "2025-01-15",
+          "2025-05-12",
+          "2025-04-16"
+        ]
+      },
+      {
+        "name": "refund_amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 1711,
+        "sample": [
+          "70649",
+          "62531",
+          "131708"
+        ]
+      },
+      {
+        "name": "reason",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "오배송",
+          "오배송",
+          "오배송"
+        ]
+      }
+    ],
+    "identifiers": [
+      "return_id",
+      "order_id"
+    ],
+    "dates": {
+      "refund_completed_date": {
+        "min": "2025-01-13",
+        "max": "2026-06-30"
+      },
+      "original_order_date": {
+        "min": "2025-01-01",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/celtonic_revenue_by_customer (2).csv",
+    "filename": "celtonic_revenue_by_customer (2).csv",
+    "sha256": "adc5faf03f86021ffca2b9eeaada539411c3bbc88fe12fca0a7d7f86d4a8737a",
+    "bytes": 1143498,
+    "modified_at": "2026-11-10T11:24:45.244646549",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 커머스·마케팅",
+    "description": "캠페인 귀속 주문 표본",
+    "rows": 15650,
+    "column_count": 9,
+    "columns": [
+      {
+        "name": "order_id",
+        "meaning": "수주 식별자; 배치 연결 표에는 없음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 15650,
+        "sample": [
+          "MO-0000001",
+          "MO-0000002",
+          "MO-0000003"
+        ]
+      },
+      {
+        "name": "order_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 390,
+        "sample": [
+          "2025-05-14",
+          "2025-03-10",
+          "2025-01-29"
+        ]
+      },
+      {
+        "name": "customer_ref",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 13105,
+        "sample": [
+          "CU-000001",
+          "CU-000002",
+          "CU-000003"
+        ]
+      },
+      {
+        "name": "channel_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 7,
+        "sample": [
+          "CH-03",
+          "CH-03",
+          "CH-03"
+        ]
+      },
+      {
+        "name": "country",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "국내",
+          "국내",
+          "국내"
+        ]
+      },
+      {
+        "name": "sku_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 12,
+        "sample": [
+          "SKU-3001",
+          "SKU-3003",
+          "SKU-3001"
+        ]
+      },
+      {
+        "name": "campaign_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 25,
+        "sample": [
+          "CMP-0001",
+          "CMP-0001",
+          "CMP-0001"
+        ]
+      },
+      {
+        "name": "gmv_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 14706,
+        "sample": [
+          "84590",
+          "170436",
+          "107336"
+        ]
+      },
+      {
+        "name": "coupon_discount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 4361,
+        "sample": [
+          "18678",
+          "0",
+          "35469"
+        ]
+      }
+    ],
+    "identifiers": [
+      "order_id",
+      "customer_ref",
+      "channel_id",
+      "sku_id",
+      "campaign_id"
+    ],
+    "dates": {
+      "order_date": {
+        "min": "2025-01-01",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/data_dictionary (2).md",
+    "filename": "data_dictionary (2).md",
+    "sha256": "672edfdb343ee1c668a511fafbb4ac51d498134340119a3069007b2b5b86a7d0",
+    "bytes": 8293,
+    "modified_at": "2026-11-10T11:24:45.139282465",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# 1. 그룹사 개요",
+    "rows": 0,
+    "columns": [],
+    "warning": ""
+  },
+  {
+    "path": "04_원본데이터/ext_channel_benchmark (2).csv",
+    "filename": "ext_channel_benchmark (2).csv",
+    "sha256": "91425e5078416e2168452441d398e72484a9b5882dc990a7cfc88d3104b4c4ce",
+    "bytes": 3066,
+    "modified_at": "2026-11-10T11:24:45.256513119",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 마케팅",
+    "description": "캠페인 마스터",
+    "rows": 25,
+    "column_count": 11,
+    "columns": [
+      {
+        "name": "campaign_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 25,
+        "sample": [
+          "CMP-0001",
+          "CMP-0002",
+          "CMP-0003"
+        ]
+      },
+      {
+        "name": "campaign_name",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 25,
+        "sample": [
+          "혜인 색조 캠페인1",
+          "혜인 색조 캠페인2",
+          "혜인 기초 캠페인3"
+        ]
+      },
+      {
+        "name": "influencer_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 10,
+        "sample": [
+          "INF-001",
+          "INF-001",
+          "INF-001"
+        ]
+      },
+      {
+        "name": "country",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "국내",
+          "국내",
+          "국내"
+        ]
+      },
+      {
+        "name": "sns_channel",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "YouTube",
+          "YouTube",
+          "YouTube"
+        ]
+      },
+      {
+        "name": "sns_format",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 5,
+        "sample": [
+          "롱폼",
+          "숏츠",
+          "숏츠"
+        ]
+      },
+      {
+        "name": "sales_channel",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "대형파트너",
+          "마켓플레이스",
+          "라이브"
+        ]
+      },
+      {
+        "name": "product_line",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "색조",
+          "색조",
+          "기초"
+        ]
+      },
+      {
+        "name": "start_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "2025-01-01",
+          "2025-07-01",
+          "2025-12-30"
+        ]
+      },
+      {
+        "name": "end_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "2025-07-01",
+          "2025-12-30",
+          "2026-06-30"
+        ]
+      },
+      {
+        "name": "attribution_window_days",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "7",
+          "7",
+          "7"
+        ]
+      }
+    ],
+    "identifiers": [
+      "campaign_id",
+      "influencer_id"
+    ],
+    "dates": {
+      "start_date": {
+        "min": "2025-01-01",
+        "max": "2025-12-30"
+      },
+      "end_date": {
+        "min": "2025-07-01",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/ext_fx_daily (2).csv",
+    "filename": "ext_fx_daily (2).csv",
+    "sha256": "7df809c41142d702e09be67b510a65e6c638d59f1f0c43eb2d231c934faf1c64",
+    "bytes": 1039,
+    "modified_at": "2026-11-10T11:24:45.265466213",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "sku",
+    "department": "Masil 공급망",
+    "description": "SKU·Corevia 제품군 대응",
+    "rows": 14,
+    "column_count": 9,
+    "columns": [
+      {
+        "name": "sku_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 14,
+        "sample": [
+          "SKU-1001",
+          "SKU-1002",
+          "SKU-1003"
+        ]
+      },
+      {
+        "name": "sku_name",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 14,
+        "sample": [
+          "더마 리페어 세럼",
+          "더마 카밍 크림",
+          "더마 배리어 로션"
+        ]
+      },
+      {
+        "name": "category",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "더마",
+          "더마",
+          "더마"
+        ]
+      },
+      {
+        "name": "product_id",
+        "meaning": "Corevia 제품군 식별자; 개별 SKU 아님",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "PL-02",
+          "PL-02",
+          "PL-02"
+        ]
+      },
+      {
+        "name": "source_company",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "Corevia",
+          "Corevia",
+          "Corevia"
+        ]
+      },
+      {
+        "name": "safety_stock_weeks_min",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "4",
+          "4",
+          "4"
+        ]
+      },
+      {
+        "name": "safety_stock_weeks_max",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "6",
+          "6",
+          "6"
+        ]
+      },
+      {
+        "name": "moq",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 5,
+        "sample": [
+          "24000",
+          "24000",
+          "20000"
+        ]
+      },
+      {
+        "name": "lead_time_weeks",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "12",
+          "12",
+          "12"
+        ]
+      }
+    ],
+    "identifiers": [
+      "sku_id",
+      "product_id"
+    ],
+    "dates": {},
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "SKU·Corevia 제품군 대응"
+  },
+  {
+    "path": "04_원본데이터/ext_industry_benchmark (2).csv",
+    "filename": "ext_industry_benchmark (2).csv",
+    "sha256": "a4dd2066bb0e22b8e9cb7ecd215600b0b8acd47b00510d03fc35db232b06cb1c",
+    "bytes": 649,
+    "modified_at": "2026-11-10T11:24:45.258517265",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 영업·운영",
+    "description": "판매 채널 마스터",
+    "rows": 8,
+    "column_count": 7,
+    "columns": [
+      {
+        "name": "channel_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 8,
+        "sample": [
+          "CH-01",
+          "CH-02",
+          "CH-03"
+        ]
+      },
+      {
+        "name": "channel_name",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 8,
+        "sample": [
+          "마실 자사몰",
+          "메가마켓플레이스",
+          "뷰티메가마트"
+        ]
+      },
+      {
+        "name": "channel_type",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 5,
+        "sample": [
+          "자사몰",
+          "마켓플레이스",
+          "대형파트너"
+        ]
+      },
+      {
+        "name": "partner_code",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 25.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 7,
+        "sample": [
+          "LC-0002",
+          "LC-0001",
+          "LC-0003"
+        ]
+      },
+      {
+        "name": "country",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "국내",
+          "국내",
+          "국내"
+        ]
+      },
+      {
+        "name": "payment_terms_days",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "0",
+          "3",
+          "45"
+        ]
+      },
+      {
+        "name": "effective_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "2024-01-01",
+          "2024-01-01",
+          "2024-01-01"
+        ]
+      }
+    ],
+    "identifiers": [
+      "channel_id"
+    ],
+    "dates": {
+      "effective_date": {
+        "min": "2024-01-01",
+        "max": "2024-01-01"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/ext_news_quality_incident (2).md",
+    "filename": "ext_news_quality_incident (2).md",
+    "sha256": "e004bd66caead04b7ad9000d8de643941a19375ffc8d062fec481c740581a111",
+    "bytes": 566,
+    "modified_at": "2026-11-10T11:24:45.268386601",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# board_minutes — 이사회 회의록·승인 이력 (Aurora)",
+    "rows": 0,
+    "columns": [],
+    "warning": ""
+  },
+  {
+    "path": "04_원본데이터/fin_ap_aging_ms (2).csv",
+    "filename": "fin_ap_aging_ms (2).csv",
+    "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+    "bytes": 14557,
+    "modified_at": "2026-11-10T11:24:45.191583395",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "qc",
+    "department": "품질",
+    "description": "원본 품질 클레임·확정 검사",
+    "rows": 165,
+    "column_count": 10,
+    "columns": [
+      {
+        "name": "claim_id",
+        "meaning": "품질 검사·클레임 고유 기록",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 165,
+        "sample": [
+          "QC-00001",
+          "QC-00002",
+          "QC-00003"
+        ]
+      },
+      {
+        "name": "claim_date",
+        "meaning": "원본 클레임 발생일",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 135,
+        "sample": [
+          "2026-03-23",
+          "2026-03-10",
+          "2026-04-06"
+        ]
+      },
+      {
+        "name": "customer_id",
+        "meaning": "기업 고객 식별자; customer_ref와 다른 체계",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "C-101",
+          "C-105",
+          "C-104"
+        ]
+      },
+      {
+        "name": "product_id",
+        "meaning": "Corevia 제품군 식별자; 개별 SKU 아님",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "PL-02",
+          "PL-02",
+          "PL-02"
+        ]
+      },
+      {
+        "name": "batch_id",
+        "meaning": "한 번에 같이 생산한 제품 묶음 식별자",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 107,
+        "sample": [
+          "B-02-2602-01",
+          "B-02-2602-01",
+          "B-02-2602-01"
+        ]
+      },
+      {
+        "name": "lot_id",
+        "meaning": "원료 로트 식별자; 생산 배치와 다른 단위",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 99,
+        "sample": [
+          "LOT-B-2602-P",
+          "LOT-B-2602-P",
+          "LOT-B-2602-P"
+        ]
+      },
+      {
+        "name": "claim_type",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "피부트러블",
+          "피부트러블",
+          "피부트러블"
+        ]
+      },
+      {
+        "name": "defect_confirmed",
+        "meaning": "규격 이탈 확정 여부; 보류·False는 미확정",
+        "dtype": "boolean",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "True",
+          "True",
+          "True"
+        ]
+      },
+      {
+        "name": "qty_affected",
+        "meaning": "검사·클레임 영향 수량; 확정 True만 합산",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "EA",
+        "unique": 63,
+        "sample": [
+          "569",
+          "681",
+          "1006"
+        ]
+      },
+      {
+        "name": "status",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "확정",
+          "확정",
+          "확정"
+        ]
+      }
+    ],
+    "identifiers": [
+      "claim_id",
+      "customer_id",
+      "product_id",
+      "batch_id",
+      "lot_id"
+    ],
+    "dates": {
+      "claim_date": {
+        "min": "2024-02-23",
+        "max": "2026-06-25"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "원본 품질 클레임·확정 검사"
+  },
+  {
+    "path": "04_원본데이터/fin_ar_aging_cv (2).csv",
+    "filename": "fin_ar_aging_cv (2).csv",
+    "sha256": "846125247bec79ca6a927cef1c61bca31b51145fc9b4f84e002073fcf3f7517b",
+    "bytes": 7449,
+    "modified_at": "2026-11-10T11:24:45.148892879",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# mkt_meeting_notes — 마케팅 성과 회의록 (Masil)",
+    "rows": 0,
+    "columns": [],
+    "warning": "CSV 확장자이지만 본문 문서"
+  },
+  {
+    "path": "04_원본데이터/fin_ar_aging_ms (2).csv",
+    "filename": "fin_ar_aging_ms (2).csv",
+    "sha256": "352b77edaf66a4dd3bbb368ec9c778652898262bdc37761a70db51d401526a74",
+    "bytes": 828,
+    "modified_at": "2026-11-10T11:24:45.191896439",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# quality_policy — 품질정책 (회수 기준)",
+    "rows": 0,
+    "columns": [],
+    "warning": "CSV 확장자이지만 본문 문서"
+  },
+  {
+    "path": "04_원본데이터/fin_cash_daily_ms (2).csv",
+    "filename": "fin_cash_daily_ms (2).csv",
+    "sha256": "89a39a1774779ea6917ec0559007818c80067f29b68e44fb26a5d9d249afa01a",
+    "bytes": 91661,
+    "modified_at": "2026-11-10T11:24:45.191896439",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "links",
+    "department": "물류",
+    "description": "배치별 출하 추적",
+    "rows": 1431,
+    "column_count": 7,
+    "columns": [
+      {
+        "name": "shipment_id",
+        "meaning": "출하 식별자; SBL과 SH는 별도 체계",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1431,
+        "sample": [
+          "SBL-000001",
+          "SBL-000002",
+          "SBL-000003"
+        ]
+      },
+      {
+        "name": "batch_id",
+        "meaning": "한 번에 같이 생산한 제품 묶음 식별자",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 240,
+        "sample": [
+          "B-01-2401-01",
+          "B-01-2401-01",
+          "B-01-2401-01"
+        ]
+      },
+      {
+        "name": "customer_id",
+        "meaning": "기업 고객 식별자; customer_ref와 다른 체계",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 12,
+        "sample": [
+          "C-102",
+          "C-105",
+          "C-101"
+        ]
+      },
+      {
+        "name": "product_id",
+        "meaning": "Corevia 제품군 식별자; 개별 SKU 아님",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "PL-01",
+          "PL-01",
+          "PL-01"
+        ]
+      },
+      {
+        "name": "order_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 518,
+        "sample": [
+          "2024-01-02",
+          "2024-01-01",
+          "2024-01-12"
+        ]
+      },
+      {
+        "name": "ship_date",
+        "meaning": "출하일; 수주일과 구분",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 514,
+        "sample": [
+          "2024-01-23",
+          "2024-01-26",
+          "2024-01-25"
+        ]
+      },
+      {
+        "name": "shipped_qty",
+        "meaning": "해당 출하 기록 수량",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "EA",
+        "unique": 1405,
+        "sample": [
+          "27395",
+          "29838",
+          "40920"
+        ]
+      }
+    ],
+    "identifiers": [
+      "shipment_id",
+      "batch_id",
+      "customer_id",
+      "product_id"
+    ],
+    "dates": {
+      "order_date": {
+        "min": "2023-12-19",
+        "max": "2026-06-15"
+      },
+      "ship_date": {
+        "min": "2024-01-10",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "배치별 출하 추적"
+  },
+  {
+    "path": "04_원본데이터/fin_collection_history_ms (2).csv",
+    "filename": "fin_collection_history_ms (2).csv",
+    "sha256": "462d365af81d77de0d5962e8ab04c598b00b027c41fef3c9cfc96c8d3a0741e8",
+    "bytes": 14841,
+    "modified_at": "2026-11-10T11:24:45.191896439",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Corevia 영업·재무",
+    "description": "수주·출하 실적 월별 집계",
+    "rows": 360,
+    "column_count": 5,
+    "columns": [
+      {
+        "name": "period_ym",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 30,
+        "sample": [
+          "2024-01",
+          "2024-01",
+          "2024-01"
+        ]
+      },
+      {
+        "name": "customer_id",
+        "meaning": "기업 고객 식별자; customer_ref와 다른 체계",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 12,
+        "sample": [
+          "C-101",
+          "C-102",
+          "C-103"
+        ]
+      },
+      {
+        "name": "booking_amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 360,
+        "sample": [
+          "11625663971",
+          "11090871507",
+          "4076352581"
+        ]
+      },
+      {
+        "name": "shipment_revenue_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 360,
+        "sample": [
+          "13759947706",
+          "11086492190",
+          "3098186879"
+        ]
+      },
+      {
+        "name": "booking_yoy_pct",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 33.611,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 118,
+        "unit": "% 여부는 정의 확인; pct는 %",
+        "unique": 216,
+        "sample": [
+          "-3.5",
+          "7.9",
+          "41.7"
+        ]
+      }
+    ],
+    "identifiers": [
+      "customer_id"
+    ],
+    "dates": {
+      "period_ym": {
+        "min": "2024-01-01",
+        "max": "2026-06-01"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/fin_income_statement_cv (2).csv",
+    "filename": "fin_income_statement_cv (2).csv",
+    "sha256": "b495d4dafc23889efd3797664b49de64af584b75152ddd749b6ef0a92e060747",
+    "bytes": 1616,
+    "modified_at": "2026-11-10T11:24:45.152113914",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# rfp_c201 — C-201 신규 입찰 RFP 요약",
+    "rows": 0,
+    "columns": [],
+    "warning": "CSV 확장자이지만 본문 문서"
+  },
+  {
+    "path": "04_원본데이터/grp_available_cash (2).md",
+    "filename": "grp_available_cash (2).md",
+    "sha256": "dc394fd268c80e3243ae19c64dd989b71beb2982a466ab9e99528a4ba0a19d30",
+    "bytes": 1959,
+    "modified_at": "2026-11-10T11:24:45.226616383",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# inf001_exclusive_contract_notice — INF-001 연간 전속계약 갱신 통보",
+    "rows": 0,
+    "columns": [],
+    "warning": ""
+  },
+  {
+    "path": "04_원본데이터/grp_investment_proposal_celtonic (2).md",
+    "filename": "grp_investment_proposal_celtonic (2).md",
+    "sha256": "203d09a779358ad73d28631a193724313af54fb1634293f8018c3d766e36b870",
+    "bytes": 16178,
+    "modified_at": "2026-11-10T11:24:45.233241796",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 마케팅",
+    "description": "캠페인 광고 집행 비용",
+    "rows": 225,
+    "column_count": 8,
+    "columns": [
+      {
+        "name": "spend_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 225,
+        "sample": [
+          "AD-000001",
+          "AD-000002",
+          "AD-000003"
+        ]
+      },
+      {
+        "name": "campaign_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 25,
+        "sample": [
+          "CMP-0001",
+          "CMP-0001",
+          "CMP-0001"
+        ]
+      },
+      {
+        "name": "spend_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 157,
+        "sample": [
+          "2025-01-30",
+          "2025-03-25",
+          "2025-01-07"
+        ]
+      },
+      {
+        "name": "media",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "인플루언서",
+          "인플루언서",
+          "인플루언서"
+        ]
+      },
+      {
+        "name": "platform",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 33.333,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "YouTube",
+          "YouTube",
+          "YouTube"
+        ]
+      },
+      {
+        "name": "sns_format",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 33.333,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "롱폼",
+          "롱폼",
+          "롱폼"
+        ]
+      },
+      {
+        "name": "ad_cost_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 75,
+        "sample": [
+          "16927737",
+          "16927737",
+          "16927737"
+        ]
+      },
+      {
+        "name": "influencer_fee_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 66.667,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 26,
+        "sample": [
+          "16927737",
+          "16927737",
+          "16927737"
+        ]
+      }
+    ],
+    "identifiers": [
+      "spend_id",
+      "campaign_id"
+    ],
+    "dates": {
+      "spend_date": {
+        "min": "2025-01-01",
+        "max": "2026-06-26"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/id_conventions (2).md",
+    "filename": "id_conventions (2).md",
+    "sha256": "8a62b6f6752eb2f2f1a465aa2b95028fb78f8008d5b201407c269525eaf48ece",
+    "bytes": 8519,
+    "modified_at": "2026-11-10T11:24:45.140810728",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# calculation_definitions — 필수 계산 정의",
+    "rows": 0,
+    "columns": [],
+    "warning": ""
+  },
+  {
+    "path": "04_원본데이터/lc0001_payment_term_notice (2).md",
+    "filename": "lc0001_payment_term_notice (2).md",
+    "sha256": "83a129a2c7f8f58f6f8c63b96bec64b3224b6d1324fa533ca877aa1800ad3c0b",
+    "bytes": 597,
+    "modified_at": "2026-11-10T11:24:45.198527813",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# sales_meeting_notes — 영업 회의록 (Corevia)",
+    "rows": 0,
+    "columns": [],
+    "warning": ""
+  },
+  {
+    "path": "04_원본데이터/m_agency_cv (2).csv",
+    "filename": "m_agency_cv (2).csv",
+    "sha256": "b5abb8731b9711096df1651c19a80a2610aff63b2034ccb464eb430ddc1c8705",
+    "bytes": 9574,
+    "modified_at": "2026-11-10T11:24:45.153271675",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Corevia 재무",
+    "description": "고객·대리점 매출채권",
+    "rows": 146,
+    "column_count": 8,
+    "columns": [
+      {
+        "name": "ar_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 146,
+        "sample": [
+          "AR-C00001",
+          "AR-C00002",
+          "AR-C00003"
+        ]
+      },
+      {
+        "name": "agency_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 49.315,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 51,
+        "sample": [
+          "D-001",
+          "D-001",
+          "D-002"
+        ]
+      },
+      {
+        "name": "customer_id",
+        "meaning": "기업 고객 식별자; customer_ref와 다른 체계",
+        "dtype": "string",
+        "null_pct": 50.685,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 13,
+        "sample": [
+          "C-101",
+          "C-101",
+          "C-101"
+        ]
+      },
+      {
+        "name": "invoice_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 53,
+        "sample": [
+          "2026-01-20",
+          "2026-02-20",
+          "2026-03-20"
+        ]
+      },
+      {
+        "name": "due_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 74,
+        "sample": [
+          "2026-03-21",
+          "2026-04-21",
+          "2026-05-19"
+        ]
+      },
+      {
+        "name": "amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 146,
+        "sample": [
+          "12917156689",
+          "13640658333",
+          "13972071603"
+        ]
+      },
+      {
+        "name": "outstanding_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 146,
+        "sample": [
+          "2455189033",
+          "313524205",
+          "567140205"
+        ]
+      },
+      {
+        "name": "aging_days",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 56,
+        "sample": [
+          "101",
+          "70",
+          "42"
+        ]
+      }
+    ],
+    "identifiers": [
+      "ar_id",
+      "agency_id",
+      "customer_id"
+    ],
+    "dates": {
+      "invoice_date": {
+        "min": "2025-11-06",
+        "max": "2026-06-25"
+      },
+      "due_date": {
+        "min": "2026-01-05",
+        "max": "2026-08-24"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/m_channel_ms (2).csv",
+    "filename": "m_channel_ms (2).csv",
+    "sha256": "2686b7e51395ff487b5cb37d7fe1a6f2f20c4ff77acea8164bee5e32918ebd44",
+    "bytes": 1106,
+    "modified_at": "2026-11-10T11:24:45.226616383",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 공급망",
+    "description": "SKU 구매 발주·납부 일정",
+    "rows": 14,
+    "column_count": 9,
+    "columns": [
+      {
+        "name": "po_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 14,
+        "sample": [
+          "SPO-0001",
+          "SPO-0002",
+          "SPO-0003"
+        ]
+      },
+      {
+        "name": "sku_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 14,
+        "sample": [
+          "SKU-1001",
+          "SKU-1002",
+          "SKU-1003"
+        ]
+      },
+      {
+        "name": "supplier_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "Corevia",
+          "Corevia",
+          "Corevia"
+        ]
+      },
+      {
+        "name": "order_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 5,
+        "sample": [
+          "2026-06-26",
+          "2026-06-23",
+          "2026-06-22"
+        ]
+      },
+      {
+        "name": "order_qty",
+        "meaning": "수주 총량; 납기일 컬럼 별도 미제공",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "제품 EA / 원료 kg (본문 정의 기준)",
+        "unique": 5,
+        "sample": [
+          "24000",
+          "24000",
+          "20000"
+        ]
+      },
+      {
+        "name": "moq",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 5,
+        "sample": [
+          "24000",
+          "24000",
+          "20000"
+        ]
+      },
+      {
+        "name": "lead_time_weeks",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "12",
+          "12",
+          "12"
+        ]
+      },
+      {
+        "name": "amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 7,
+        "sample": [
+          "524160000",
+          "524160000",
+          "436800000"
+        ]
+      },
+      {
+        "name": "payment_due_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "2026-07-21",
+          "2026-07-21",
+          "2026-07-21"
+        ]
+      }
+    ],
+    "identifiers": [
+      "po_id",
+      "sku_id",
+      "supplier_id"
+    ],
+    "dates": {
+      "order_date": {
+        "min": "2026-06-22",
+        "max": "2026-06-26"
+      },
+      "payment_due_date": {
+        "min": "2026-07-21",
+        "max": "2026-07-21"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/m_customer_cv (2).csv",
+    "filename": "m_customer_cv (2).csv",
+    "sha256": "dec4ad30f4d80312ea1817dcbe72b5c8b5ad4b679dd470f100a1c311c35dd792",
+    "bytes": 35920,
+    "modified_at": "2026-11-10T11:24:45.157215595",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "재무 — 회사 구분 원문 확인",
+    "description": "일별 현금 입출금",
+    "rows": 652,
+    "column_count": 5,
+    "columns": [
+      {
+        "name": "date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 652,
+        "sample": [
+          "2024-01-01",
+          "2024-01-02",
+          "2024-01-03"
+        ]
+      },
+      {
+        "name": "opening_balance",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 652,
+        "sample": [
+          "12000000000",
+          "11953421938",
+          "11834762832"
+        ]
+      },
+      {
+        "name": "inflow_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 652,
+        "sample": [
+          "351470132",
+          "416303505",
+          "555519642"
+        ]
+      },
+      {
+        "name": "outflow_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 652,
+        "sample": [
+          "398048194",
+          "534962611",
+          "418999242"
+        ]
+      },
+      {
+        "name": "closing_balance",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 652,
+        "sample": [
+          "11953421938",
+          "11834762832",
+          "11971283232"
+        ]
+      }
+    ],
+    "identifiers": [],
+    "dates": {
+      "date": {
+        "min": "2024-01-01",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/m_influencer_ms (2).csv",
+    "filename": "m_influencer_ms (2).csv",
+    "sha256": "5ee7162933b1e30d779625ce5c384b8acc1d6e51636c083f49aaa6dab02548f8",
+    "bytes": 557,
+    "modified_at": "2026-11-10T11:24:45.226616383",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "inventory",
+    "department": "Masil 공급망",
+    "description": "유통 재고 — 제조 재고와 별개",
+    "rows": 14,
+    "column_count": 5,
+    "columns": [
+      {
+        "name": "sku_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 14,
+        "sample": [
+          "SKU-1001",
+          "SKU-1002",
+          "SKU-1003"
+        ]
+      },
+      {
+        "name": "snapshot_date",
+        "meaning": "재고·생산능력 스냅샷 기준일",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "2026-06-30",
+          "2026-06-30",
+          "2026-06-30"
+        ]
+      },
+      {
+        "name": "on_hand_qty",
+        "meaning": "Masil 유통 현재고; Corevia 제조 재고 아님",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "EA",
+        "unique": 14,
+        "sample": [
+          "23123",
+          "21111",
+          "16210"
+        ]
+      },
+      {
+        "name": "in_transit_qty",
+        "meaning": "유통 운송 중 물량; 현재고와 구분",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "EA",
+        "unique": 14,
+        "sample": [
+          "15821",
+          "14444",
+          "598"
+        ]
+      },
+      {
+        "name": "stock_cover_weeks",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 11,
+        "sample": [
+          "2.9",
+          "2.9",
+          "4.3"
+        ]
+      }
+    ],
+    "identifiers": [
+      "sku_id"
+    ],
+    "dates": {
+      "snapshot_date": {
+        "min": "2026-06-30",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "유통 재고 — 제조 재고와 별개"
+  },
+  {
+    "path": "04_원본데이터/m_material_cv (2).csv",
+    "filename": "m_material_cv (2).csv",
+    "sha256": "65831ca36482ce21fa59ff7883ba64c15755280745fbf6bdc83562f7898be4fa",
+    "bytes": 2179,
+    "modified_at": "2026-11-10T11:24:45.157215595",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Corevia 재무",
+    "description": "대리점 입금·채권 매칭",
+    "rows": 32,
+    "column_count": 6,
+    "columns": [
+      {
+        "name": "deposit_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 32,
+        "sample": [
+          "DP-00001",
+          "DP-00002",
+          "DP-00003"
+        ]
+      },
+      {
+        "name": "agency_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 28,
+        "sample": [
+          "D-001",
+          "D-003",
+          "D-007"
+        ]
+      },
+      {
+        "name": "deposit_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 28,
+        "sample": [
+          "2026-06-03",
+          "2026-02-04",
+          "2026-01-26"
+        ]
+      },
+      {
+        "name": "amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 32,
+        "sample": [
+          "20861742",
+          "9383099",
+          "12407711"
+        ]
+      },
+      {
+        "name": "bank_account_no",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 26,
+        "sample": [
+          "기업 198-22-851114",
+          "농협 812-72-523887",
+          "농협 604-73-117255"
+        ]
+      },
+      {
+        "name": "matched_ar_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 32,
+        "sample": [
+          "AR-D00073",
+          "AR-D00077",
+          "AR-D00084"
+        ]
+      }
+    ],
+    "identifiers": [
+      "deposit_id",
+      "agency_id",
+      "matched_ar_id"
+    ],
+    "dates": {
+      "deposit_date": {
+        "min": "2026-01-12",
+        "max": "2026-06-23"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/m_product_cv (2).csv",
+    "filename": "m_product_cv (2).csv",
+    "sha256": "c934ec99cc41dad452ae2d1772c8c537c45e70dd768cc37e71a0b5412071e14a",
+    "bytes": 13244,
+    "modified_at": "2026-11-10T11:24:45.157215595",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Corevia 재무",
+    "description": "제품군별 손익",
+    "rows": 180,
+    "column_count": 8,
+    "columns": [
+      {
+        "name": "period_ym",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 30,
+        "sample": [
+          "2024-01",
+          "2024-01",
+          "2024-01"
+        ]
+      },
+      {
+        "name": "product_id",
+        "meaning": "Corevia 제품군 식별자; 개별 SKU 아님",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "PL-01",
+          "PL-02",
+          "PL-03"
+        ]
+      },
+      {
+        "name": "revenue_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 180,
+        "sample": [
+          "12986321488",
+          "8111550370",
+          "5276001562"
+        ]
+      },
+      {
+        "name": "cogs_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 180,
+        "sample": [
+          "9350151471",
+          "5515854252",
+          "4115281218"
+        ]
+      },
+      {
+        "name": "gross_profit_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 180,
+        "sample": [
+          "3636170017",
+          "2595696118",
+          "1160720344"
+        ]
+      },
+      {
+        "name": "gpm_pct",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "% 여부는 정의 확인; pct는 %",
+        "unique": 139,
+        "sample": [
+          "28.0",
+          "32.0",
+          "22.0"
+        ]
+      },
+      {
+        "name": "opex_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 180,
+        "sample": [
+          "1818085008",
+          "1135617052",
+          "738640219"
+        ]
+      },
+      {
+        "name": "operating_profit_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 20,
+        "unit": "KRW·부가세 제외",
+        "unique": 180,
+        "sample": [
+          "1818085009",
+          "1460079066",
+          "422080125"
+        ]
+      }
+    ],
+    "identifiers": [
+      "product_id"
+    ],
+    "dates": {
+      "period_ym": {
+        "min": "2024-01-01",
+        "max": "2026-06-01"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/m_sku_ms (2).csv",
+    "filename": "m_sku_ms (2).csv",
+    "sha256": "a3fa428c227708fffaf78a52155a991b65d05075f8de04b85f944bd59cbaf54a",
+    "bytes": 27229,
+    "modified_at": "2026-11-10T11:24:45.226616383",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 영업·공급망",
+    "description": "SKU 주간 판매 실적",
+    "rows": 1092,
+    "column_count": 3,
+    "columns": [
+      {
+        "name": "week",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 78,
+        "sample": [
+          "2025-01-06",
+          "2025-01-13",
+          "2025-01-20"
+        ]
+      },
+      {
+        "name": "sku_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 14,
+        "sample": [
+          "SKU-1001",
+          "SKU-1001",
+          "SKU-1001"
+        ]
+      },
+      {
+        "name": "sold_qty",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "제품 EA / 원료 kg (본문 정의 기준)",
+        "unique": 963,
+        "sample": [
+          "7960",
+          "6103",
+          "5711"
+        ]
+      }
+    ],
+    "identifiers": [
+      "sku_id"
+    ],
+    "dates": {
+      "week": {
+        "min": "2025-01-06",
+        "max": "2026-06-29"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/material_lot_master_cv (2).csv",
+    "filename": "material_lot_master_cv (2).csv",
+    "sha256": "7f12eaccb2261cdae9a540da25e2a5747a2100ff1940421af35d6813920acf49",
+    "bytes": 454,
+    "modified_at": "2026-11-10T11:24:45.164202690",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# sales_memo — 재무팀 메모 (Corevia)",
+    "rows": 0,
+    "columns": [],
+    "warning": "CSV 확장자이지만 본문 문서"
+  },
+  {
+    "path": "04_원본데이터/mkt_budget_plan_ms (2).csv",
+    "filename": "mkt_budget_plan_ms (2).csv",
+    "sha256": "2c70e53dd4638935c80e3272b54466084d56c772399d77519b4f18039faf93d5",
+    "bytes": 1517,
+    "modified_at": "2026-11-10T11:24:45.205868244",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# covenant_terms",
+    "rows": 0,
+    "columns": [],
+    "warning": "CSV 확장자이지만 본문 문서"
+  },
+  {
+    "path": "04_원본데이터/mkt_cost_master_ms (2).csv",
+    "filename": "mkt_cost_master_ms (2).csv",
+    "sha256": "851c1d108caaad3c28a558a596f67459b520bc6828a00ca6e3bc3287017c4e11",
+    "bytes": 1456,
+    "modified_at": "2026-11-10T11:24:45.212797880",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 재무",
+    "description": "매입채무·지급 예정",
+    "rows": 24,
+    "column_count": 7,
+    "columns": [
+      {
+        "name": "ap_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 24,
+        "sample": [
+          "MAP-0001",
+          "MAP-0002",
+          "MAP-0003"
+        ]
+      },
+      {
+        "name": "supplier_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "Corevia",
+          "Corevia",
+          "Corevia"
+        ]
+      },
+      {
+        "name": "po_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 41.667,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 15,
+        "sample": [
+          "SPO-0001",
+          "SPO-0002",
+          "SPO-0003"
+        ]
+      },
+      {
+        "name": "invoice_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 10,
+        "sample": [
+          "2026-06-26",
+          "2026-06-23",
+          "2026-06-22"
+        ]
+      },
+      {
+        "name": "payment_due_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 9,
+        "sample": [
+          "2026-07-21",
+          "2026-07-21",
+          "2026-07-21"
+        ]
+      },
+      {
+        "name": "amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 17,
+        "sample": [
+          "524160000",
+          "524160000",
+          "436800000"
+        ]
+      },
+      {
+        "name": "aging_days",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    ],
+    "identifiers": [
+      "ap_id",
+      "supplier_id",
+      "po_id"
+    ],
+    "dates": {
+      "invoice_date": {
+        "min": "2026-05-07",
+        "max": "2026-06-26"
+      },
+      "payment_due_date": {
+        "min": "2026-06-06",
+        "max": "2026-07-25"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/mkt_coupons_ms (2).csv",
+    "filename": "mkt_coupons_ms (2).csv",
+    "sha256": "242e9d3d8805d29903fb1d6c269ea841489e7ed3d1a9ad54732732ab6bae1437",
+    "bytes": 1305,
+    "modified_at": "2026-11-10T11:24:45.212797880",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 재무",
+    "description": "채널별 매출채권",
+    "rows": 21,
+    "column_count": 7,
+    "columns": [
+      {
+        "name": "ar_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 21,
+        "sample": [
+          "MAR-0001",
+          "MAR-0002",
+          "MAR-0003"
+        ]
+      },
+      {
+        "name": "channel_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 7,
+        "sample": [
+          "CH-02",
+          "CH-02",
+          "CH-02"
+        ]
+      },
+      {
+        "name": "invoice_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 14,
+        "sample": [
+          "2026-06-30",
+          "2026-06-29",
+          "2026-04-06"
+        ]
+      },
+      {
+        "name": "due_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 17,
+        "sample": [
+          "2026-07-03",
+          "2026-07-02",
+          "2026-04-09"
+        ]
+      },
+      {
+        "name": "amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 21,
+        "sample": [
+          "275408316",
+          "253155246",
+          "217210975"
+        ]
+      },
+      {
+        "name": "outstanding_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 21,
+        "sample": [
+          "275408316",
+          "253155246",
+          "50863021"
+        ]
+      },
+      {
+        "name": "aging_days",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 7,
+        "sample": [
+          "0",
+          "0",
+          "82"
+        ]
+      }
+    ],
+    "identifiers": [
+      "ar_id",
+      "channel_id"
+    ],
+    "dates": {
+      "invoice_date": {
+        "min": "2026-04-01",
+        "max": "2026-06-30"
+      },
+      "due_date": {
+        "min": "2026-04-08",
+        "max": "2026-09-06"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/mkt_meeting_notes_ms (2).md",
+    "filename": "mkt_meeting_notes_ms (2).md",
+    "sha256": "74c2aae386fe01e4b6f49029882d92f56644be23187bf2dcf9d778f2a0ddd677",
+    "bytes": 8339,
+    "modified_at": "2026-11-10T11:24:45.143314600",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# data_dictionary — 공통 데이터 정의·고정 수식",
+    "rows": 0,
+    "columns": [],
+    "warning": ""
+  },
+  {
+    "path": "04_원본데이터/mkt_orders_ms (2).csv",
+    "filename": "mkt_orders_ms (2).csv",
+    "sha256": "6dd0d9f8ef3af047460ffaaea2d82a5eddd4a2fae74596507e7953809805129f",
+    "bytes": 45728,
+    "modified_at": "2026-11-10T11:24:45.216962814",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 재무",
+    "description": "일별 현금·차입약정 실적",
+    "rows": 652,
+    "column_count": 7,
+    "columns": [
+      {
+        "name": "date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 652,
+        "sample": [
+          "2024-01-01",
+          "2024-01-02",
+          "2024-01-03"
+        ]
+      },
+      {
+        "name": "opening_balance",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 652,
+        "sample": [
+          "5800000000",
+          "5699583759",
+          "5623659114"
+        ]
+      },
+      {
+        "name": "inflow_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 652,
+        "sample": [
+          "211325317",
+          "288498320",
+          "391556238"
+        ]
+      },
+      {
+        "name": "outflow_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 652,
+        "sample": [
+          "311741558",
+          "364422965",
+          "340144780"
+        ]
+      },
+      {
+        "name": "closing_balance",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 652,
+        "sample": [
+          "5699583759",
+          "5623659114",
+          "5675070572"
+        ]
+      },
+      {
+        "name": "covenant_min_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 1,
+        "sample": [
+          "3000000000",
+          "3000000000",
+          "3000000000"
+        ]
+      },
+      {
+        "name": "breach_flag",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "boolean",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "False",
+          "False",
+          "False"
+        ]
+      }
+    ],
+    "identifiers": [],
+    "dates": {
+      "date": {
+        "min": "2024-01-01",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/mkt_repurchase_ms (2).csv",
+    "filename": "mkt_repurchase_ms (2).csv",
+    "sha256": "cd123e0a442745006348a4b6026e5c168336ababf2b8434df60ef4121095eca3",
+    "bytes": 799,
+    "modified_at": "2026-11-10T11:24:45.219602585",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 재무",
+    "description": "현금 전망 — 작성자 주장, 확정 사실 아님",
+    "rows": 13,
+    "column_count": 5,
+    "columns": [
+      {
+        "name": "forecast_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "2026-06-30",
+          "2026-06-30",
+          "2026-06-30"
+        ]
+      },
+      {
+        "name": "week",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 13,
+        "sample": [
+          "2026-07-06",
+          "2026-07-13",
+          "2026-07-20"
+        ]
+      },
+      {
+        "name": "projected_inflow_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 13,
+        "sample": [
+          "1729945389",
+          "1859842642",
+          "1878168998"
+        ]
+      },
+      {
+        "name": "projected_outflow_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 13,
+        "sample": [
+          "1409124560",
+          "1447120395",
+          "1668053259"
+        ]
+      },
+      {
+        "name": "projected_closing_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 13,
+        "sample": [
+          "5468884369",
+          "5881606616",
+          "6091722355"
+        ]
+      }
+    ],
+    "identifiers": [],
+    "dates": {
+      "forecast_date": {
+        "min": "2026-06-30",
+        "max": "2026-06-30"
+      },
+      "week": {
+        "min": "2026-07-06",
+        "max": "2026-09-28"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/mkt_returns_ms (2).csv",
+    "filename": "mkt_returns_ms (2).csv",
+    "sha256": "21643d65ccced6fea3faa1b89e62c86e0f349b3607ed4eaef96335fc32c11ba5",
+    "bytes": 3877,
+    "modified_at": "2026-11-10T11:24:45.221105814",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 재무",
+    "description": "채널 정산·회수 실적",
+    "rows": 96,
+    "column_count": 5,
+    "columns": [
+      {
+        "name": "period_ym",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 12,
+        "sample": [
+          "2025-07",
+          "2025-07",
+          "2025-07"
+        ]
+      },
+      {
+        "name": "channel",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 8,
+        "sample": [
+          "CH-01",
+          "CH-02",
+          "CH-03"
+        ]
+      },
+      {
+        "name": "expected_amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 96,
+        "sample": [
+          "1648855515",
+          "1538565998",
+          "425409598"
+        ]
+      },
+      {
+        "name": "collected_amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 96,
+        "sample": [
+          "1447519546",
+          "1372199293",
+          "371523932"
+        ]
+      },
+      {
+        "name": "collection_rate_pct",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "% 여부는 정의 확인; pct는 %",
+        "unique": 70,
+        "sample": [
+          "87.8",
+          "89.2",
+          "87.3"
+        ]
+      }
+    ],
+    "identifiers": [],
+    "dates": {
+      "period_ym": {
+        "min": "2025-07-01",
+        "max": "2026-06-01"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/mkt_traffic_inflow_ms (2).csv",
+    "filename": "mkt_traffic_inflow_ms (2).csv",
+    "sha256": "a8d635b8df8a6734bdfe5806c4d61e5c752c381056b7d5a756f65ec05a6ccefd",
+    "bytes": 526,
+    "modified_at": "2026-11-10T11:24:45.223108768",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# lc0001_payment_term_notice — LC-0001 결제조건 변경 통보",
+    "rows": 0,
+    "columns": [],
+    "warning": "CSV 확장자이지만 본문 문서"
+  },
+  {
+    "path": "04_원본데이터/prod_batch_log_cv (2).csv",
+    "filename": "prod_batch_log_cv (2).csv",
+    "sha256": "10b959e3d1f13987c5da1d6cc81172de881f43b6f94e2d72267aa1e8a3f7bcc7",
+    "bytes": 5364,
+    "modified_at": "2026-11-10T11:24:45.167853832",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Corevia 영업지원",
+    "description": "대리점 식별 마스터",
+    "rows": 50,
+    "column_count": 8,
+    "columns": [
+      {
+        "name": "agency_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 50,
+        "sample": [
+          "D-001",
+          "D-002",
+          "D-003"
+        ]
+      },
+      {
+        "name": "agency_name",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 50,
+        "sample": [
+          "대성상사1",
+          "대륙상사2",
+          "한라인상사3"
+        ]
+      },
+      {
+        "name": "representative_name",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 47,
+        "sample": [
+          "류민준",
+          "권도윤",
+          "오성민"
+        ]
+      },
+      {
+        "name": "business_reg_no",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 50,
+        "sample": [
+          "709-37-12773",
+          "130-61-25519",
+          "500-27-76196"
+        ]
+      },
+      {
+        "name": "address",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 49,
+        "sample": [
+          "서울시 중앙로 180",
+          "대전시 중앙로 160",
+          "부산시 상공로 211"
+        ]
+      },
+      {
+        "name": "bank_account_no",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 49,
+        "sample": [
+          "기업 198-22-851114",
+          "우리 542-93-755201",
+          "농협 812-72-523887"
+        ]
+      },
+      {
+        "name": "rebate_eligible",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "boolean",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "True",
+          "True",
+          "True"
+        ]
+      },
+      {
+        "name": "registered_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 49,
+        "sample": [
+          "2023-06-08",
+          "2022-06-27",
+          "2020-05-18"
+        ]
+      }
+    ],
+    "identifiers": [
+      "agency_id"
+    ],
+    "dates": {
+      "registered_date": {
+        "min": "2020-02-08",
+        "max": "2023-12-25"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/production_material_consumption_cv (2).csv",
+    "filename": "production_material_consumption_cv (2).csv",
+    "sha256": "451944a7bf1b77863e53c31fc222b014f84c7baa36b678ab2e6b9c8bc3701bf0",
+    "bytes": 740,
+    "modified_at": "2026-11-10T11:24:45.169857979",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "customers",
+    "department": "영업",
+    "description": "고객 마스터",
+    "rows": 12,
+    "column_count": 7,
+    "columns": [
+      {
+        "name": "customer_id",
+        "meaning": "기업 고객 식별자; customer_ref와 다른 체계",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 12,
+        "sample": [
+          "C-101",
+          "C-102",
+          "C-103"
+        ]
+      },
+      {
+        "name": "customer_name",
+        "meaning": "기업 고객 명칭",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 12,
+        "sample": [
+          "뷰티메가리테일",
+          "홈앤쇼핑네트워크",
+          "라라드럭스토어"
+        ]
+      },
+      {
+        "name": "channel_type",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "B2B",
+          "홈쇼핑",
+          "B2B"
+        ]
+      },
+      {
+        "name": "cost_linked_clause",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "boolean",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "False",
+          "True",
+          "True"
+        ]
+      },
+      {
+        "name": "payment_terms_days",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 5,
+        "sample": [
+          "60",
+          "45",
+          "50"
+        ]
+      },
+      {
+        "name": "revenue_share_pct",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "% 여부는 정의 확인; pct는 %",
+        "unique": 10,
+        "sample": [
+          "30.0",
+          "25.0",
+          "8.0"
+        ]
+      },
+      {
+        "name": "effective_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "2024-01-01",
+          "2024-01-01",
+          "2024-01-01"
+        ]
+      }
+    ],
+    "identifiers": [
+      "customer_id"
+    ],
+    "dates": {
+      "effective_date": {
+        "min": "2024-01-01",
+        "max": "2024-01-01"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "고객 마스터"
+  },
+  {
+    "path": "04_원본데이터/quality_policy_cv (2).md",
+    "filename": "quality_policy_cv (2).md",
+    "sha256": "af28bc7e8946b0c3135ac841b9f097095a68e453960e638dce7e3c00b5632db7",
+    "bytes": 15693,
+    "modified_at": "2026-11-10T11:24:45.171094418",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "lots",
+    "department": "품질·조달",
+    "description": "원료 로트 검사",
+    "rows": 252,
+    "column_count": 7,
+    "columns": [
+      {
+        "name": "lot_id",
+        "meaning": "원료 로트 식별자; 생산 배치와 다른 단위",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 252,
+        "sample": [
+          "LOT-A-2401-1",
+          "LOT-A-2402-1",
+          "LOT-A-2403-1"
+        ]
+      },
+      {
+        "name": "material_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "M-A",
+          "M-A",
+          "M-A"
+        ]
+      },
+      {
+        "name": "supplier_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "V-201",
+          "V-201",
+          "V-201"
+        ]
+      },
+      {
+        "name": "receipt_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 193,
+        "sample": [
+          "2024-01-04",
+          "2024-02-22",
+          "2024-03-13"
+        ]
+      },
+      {
+        "name": "inspection_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 192,
+        "sample": [
+          "2024-01-05",
+          "2024-02-23",
+          "2024-03-15"
+        ]
+      },
+      {
+        "name": "inspection_result",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "규격내",
+          "규격내",
+          "규격내"
+        ]
+      },
+      {
+        "name": "received_qty",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "kg",
+        "unique": 251,
+        "sample": [
+          "1352.8",
+          "2268.4",
+          "2436.9"
+        ]
+      }
+    ],
+    "identifiers": [
+      "lot_id",
+      "material_id",
+      "supplier_id"
+    ],
+    "dates": {
+      "receipt_date": {
+        "min": "2024-01-02",
+        "max": "2026-06-23"
+      },
+      "inspection_date": {
+        "min": "2024-01-05",
+        "max": "2026-06-24"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "원료 로트 검사"
+  },
+  {
+    "path": "04_원본데이터/rfp_c201 (2).md",
+    "filename": "rfp_c201 (2).md",
+    "sha256": "4bd5aa852deb7449b5bb8bde77a5ed8d032b27d2592372a953db8d44e1efaceb",
+    "bytes": 901,
+    "modified_at": "2026-11-10T11:24:45.146862030",
+    "encoding": "utf-8-sig",
+    "kind": "document",
+    "title": "# id_conventions — 전 엔티티 ID 체계",
+    "rows": 0,
+    "columns": [],
+    "warning": ""
+  },
+  {
+    "path": "04_원본데이터/sales_meeting_notes_cv (2).md",
+    "filename": "sales_meeting_notes_cv (2).md",
+    "sha256": "6c49f0268bd75c21dee53bb8e7c6cedffcf825b836f1d42c822671fb1ebab408",
+    "bytes": 28889,
+    "modified_at": "2026-11-10T11:24:45.181817770",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "batches",
+    "department": "품질·생산",
+    "description": "생산 배치 및 검사 판정",
+    "rows": 480,
+    "column_count": 7,
+    "columns": [
+      {
+        "name": "batch_id",
+        "meaning": "한 번에 같이 생산한 제품 묶음 식별자",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 480,
+        "sample": [
+          "B-01-2401-01",
+          "B-01-2401-02",
+          "B-01-2401-03"
+        ]
+      },
+      {
+        "name": "product_id",
+        "meaning": "Corevia 제품군 식별자; 개별 SKU 아님",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "PL-01",
+          "PL-01",
+          "PL-01"
+        ]
+      },
+      {
+        "name": "production_line",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "F1",
+          "F1",
+          "F1"
+        ]
+      },
+      {
+        "name": "production_date",
+        "meaning": "생산 실행일",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 301,
+        "sample": [
+          "2024-01-19",
+          "2024-01-09",
+          "2024-01-11"
+        ]
+      },
+      {
+        "name": "produced_qty",
+        "meaning": "배치 생산량; 불량률 분모",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "EA",
+        "unique": 480,
+        "sample": [
+          "269638",
+          "280085",
+          "249602"
+        ]
+      },
+      {
+        "name": "input_lot_ids",
+        "meaning": "배치에 투입한 원료 로트 목록",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 223,
+        "sample": [
+          "LOT-A-2401-1",
+          "LOT-A-2401-1",
+          "LOT-A-2401-1"
+        ]
+      },
+      {
+        "name": "qc_result",
+        "meaning": "배치 품질 판정; 보류는 확정 불량과 다름",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "합격",
+          "합격",
+          "합격"
+        ]
+      }
+    ],
+    "identifiers": [
+      "batch_id",
+      "product_id"
+    ],
+    "dates": {
+      "production_date": {
+        "min": "2024-01-02",
+        "max": "2026-06-23"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "생산 배치 및 검사 판정"
+  },
+  {
+    "path": "04_원본데이터/sales_orders_cv (2).csv",
+    "filename": "sales_orders_cv (2).csv",
+    "sha256": "59eda3edae91a304053d8865d67dbabb266567e7fbf5c3035bbd2768fa0d84fb",
+    "bytes": 34411,
+    "modified_at": "2026-11-10T11:24:45.184718847",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "consumption",
+    "department": "생산",
+    "description": "배치 원료 투입",
+    "rows": 480,
+    "column_count": 8,
+    "columns": [
+      {
+        "name": "consumption_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 480,
+        "sample": [
+          "CN-000001",
+          "CN-000002",
+          "CN-000003"
+        ]
+      },
+      {
+        "name": "batch_id",
+        "meaning": "한 번에 같이 생산한 제품 묶음 식별자",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 480,
+        "sample": [
+          "B-01-2401-01",
+          "B-01-2401-02",
+          "B-01-2401-03"
+        ]
+      },
+      {
+        "name": "lot_id",
+        "meaning": "원료 로트 식별자; 생산 배치와 다른 단위",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 223,
+        "sample": [
+          "LOT-A-2401-1",
+          "LOT-A-2401-1",
+          "LOT-A-2401-1"
+        ]
+      },
+      {
+        "name": "material_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "M-A",
+          "M-A",
+          "M-A"
+        ]
+      },
+      {
+        "name": "product_id",
+        "meaning": "Corevia 제품군 식별자; 개별 SKU 아님",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "PL-01",
+          "PL-01",
+          "PL-01"
+        ]
+      },
+      {
+        "name": "consumed_qty",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "kg",
+        "unique": 479,
+        "sample": [
+          "16163.34",
+          "8440.27",
+          "6478.73"
+        ]
+      },
+      {
+        "name": "applied_unit_cost_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 78,
+        "sample": [
+          "81840",
+          "81840",
+          "81840"
+        ]
+      },
+      {
+        "name": "consumption_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 301,
+        "sample": [
+          "2024-01-19",
+          "2024-01-09",
+          "2024-01-11"
+        ]
+      }
+    ],
+    "identifiers": [
+      "consumption_id",
+      "batch_id",
+      "lot_id",
+      "material_id",
+      "product_id"
+    ],
+    "dates": {
+      "consumption_date": {
+        "min": "2024-01-02",
+        "max": "2026-06-23"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "배치 원료 투입"
+  },
+  {
+    "path": "04_원본데이터/sales_rebate_payment_cv (2).csv",
+    "filename": "sales_rebate_payment_cv (2).csv",
+    "sha256": "d8bff0e267868a1d736dfd309dc67ae5c9a46c73d98136c406f7f9df73b99636",
+    "bytes": 299,
+    "modified_at": "2026-11-10T11:24:45.185078382",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "capacity",
+    "department": "생산",
+    "description": "라인별 생산능력 스냅샷",
+    "rows": 6,
+    "column_count": 6,
+    "columns": [
+      {
+        "name": "plant_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "F1",
+          "F1",
+          "F1"
+        ]
+      },
+      {
+        "name": "line_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "L-01",
+          "L-02",
+          "L-03"
+        ]
+      },
+      {
+        "name": "product_id",
+        "meaning": "Corevia 제품군 식별자; 개별 SKU 아님",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "PL-01",
+          "PL-02",
+          "PL-04"
+        ]
+      },
+      {
+        "name": "capacity_qty",
+        "meaning": "라인 생산능력; 기간 단위가 없으므로 월 가용량으로 단정 금지",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "EA",
+        "unique": 6,
+        "sample": [
+          "1345035",
+          "1949480",
+          "1465213"
+        ]
+      },
+      {
+        "name": "utilization_pct",
+        "meaning": "라인 단위 가동률(%)",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "% 여부는 정의 확인; pct는 %",
+        "unique": 6,
+        "sample": [
+          "85.0",
+          "97.0",
+          "80.0"
+        ]
+      },
+      {
+        "name": "snapshot_date",
+        "meaning": "재고·생산능력 스냅샷 기준일",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "2026-06-30",
+          "2026-06-30",
+          "2026-06-30"
+        ]
+      }
+    ],
+    "identifiers": [
+      "plant_id",
+      "line_id",
+      "product_id"
+    ],
+    "dates": {
+      "snapshot_date": {
+        "min": "2026-06-30",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "라인별 생산능력 스냅샷"
+  },
+  {
+    "path": "04_원본데이터/sales_shipments_cv (2).csv",
+    "filename": "sales_shipments_cv (2).csv",
+    "sha256": "bafd2c76ee394e6d0a5bdf082c6b88a30ff636562a8ae28c5ef1baba7a277ebc",
+    "bytes": 577,
+    "modified_at": "2026-11-10T11:24:45.185078382",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "그룹 전략·생산",
+    "description": "설비 증설 대안·제약",
+    "rows": 2,
+    "column_count": 7,
+    "columns": [
+      {
+        "name": "option_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "OPT-01",
+          "OPT-02"
+        ]
+      },
+      {
+        "name": "option_type",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "증설",
+          "F2전환"
+        ]
+      },
+      {
+        "name": "target_line",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "L-02(PL-02 더마)",
+          "F2 신규 더마 라인"
+        ]
+      },
+      {
+        "name": "capex_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 2,
+        "sample": [
+          "18000000000",
+          "1200000000"
+        ]
+      },
+      {
+        "name": "lead_time_weeks",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "36",
+          "7"
+        ]
+      },
+      {
+        "name": "added_capacity_qty",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "제품 EA / 원료 kg (본문 정의 기준)",
+        "unique": 2,
+        "sample": [
+          "1600000",
+          "600000"
+        ]
+      },
+      {
+        "name": "note",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "F1 더마 라인 증설. 원료 재계약·처방 재검증 불필요. 리드타임 약 9개월(36주). C-201 더마 요구량 1,500,000 EA 전량 소화 가능.",
+          "F2 해외공장 더마 전환. 원료(M-B) 재계약·처방 재검증 필요. 리드타임 6~8주. C-201 더마 요구량의 약 40%만 소화 가능 → 잔여 물량은 증설 또는 수주 축소 협상 필요."
+        ]
+      }
+    ],
+    "identifiers": [
+      "option_id"
+    ],
+    "dates": {},
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/sc_purchase_orders_ms (2).csv",
+    "filename": "sc_purchase_orders_ms (2).csv",
+    "sha256": "1f0d49d7aca7c4550d378fd772155e4abf213218a166902a72a71423eed26d0e",
+    "bytes": 1180869,
+    "modified_at": "2026-11-10T11:24:45.198527813",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "orders",
+    "department": "영업",
+    "description": "고객 주문·납품 약속",
+    "rows": 19801,
+    "column_count": 8,
+    "columns": [
+      {
+        "name": "order_id",
+        "meaning": "수주 식별자; 배치 연결 표에는 없음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 19801,
+        "sample": [
+          "SO-000001",
+          "SO-000002",
+          "SO-000003"
+        ]
+      },
+      {
+        "name": "order_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 604,
+        "sample": [
+          "2023-11-14",
+          "2023-11-27",
+          "2023-11-13"
+        ]
+      },
+      {
+        "name": "customer_id",
+        "meaning": "기업 고객 식별자; customer_ref와 다른 체계",
+        "dtype": "string",
+        "null_pct": 3.035,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 13,
+        "sample": [
+          "C-105",
+          "C-106",
+          "C-103"
+        ]
+      },
+      {
+        "name": "agency_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 96.965,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 51,
+        "sample": [
+          "D-001",
+          "D-001",
+          "D-001"
+        ]
+      },
+      {
+        "name": "product_id",
+        "meaning": "Corevia 제품군 식별자; 개별 SKU 아님",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "PL-01",
+          "PL-01",
+          "PL-01"
+        ]
+      },
+      {
+        "name": "order_qty",
+        "meaning": "수주 총량; 납기일 컬럼 별도 미제공",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "EA",
+        "unique": 8684,
+        "sample": [
+          "4963",
+          "8121",
+          "5635"
+        ]
+      },
+      {
+        "name": "order_amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 19781,
+        "sample": [
+          "45580192",
+          "72358110",
+          "50568490"
+        ]
+      },
+      {
+        "name": "sales_team",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "해외",
+          "국내1",
+          "국내1"
+        ]
+      }
+    ],
+    "identifiers": [
+      "order_id",
+      "customer_id",
+      "agency_id",
+      "product_id"
+    ],
+    "dates": {
+      "order_date": {
+        "min": "2023-11-01",
+        "max": "2026-06-26"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "고객 주문·납품 약속"
+  },
+  {
+    "path": "04_원본데이터/shipment_batch_link_cv (2).csv",
+    "filename": "shipment_batch_link_cv (2).csv",
+    "sha256": "5ac7befd8c08a9d34c2a5fd063b1658a25e2fdb46ad727a2e54790dcaaf3f5b6",
+    "bytes": 14263,
+    "modified_at": "2026-11-10T11:24:45.178704500",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Corevia 조달",
+    "description": "원료 구매·환율 적용",
+    "rows": 216,
+    "column_count": 9,
+    "columns": [
+      {
+        "name": "po_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 216,
+        "sample": [
+          "PO-00001",
+          "PO-00002",
+          "PO-00003"
+        ]
+      },
+      {
+        "name": "material_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "M-A",
+          "M-A",
+          "M-A"
+        ]
+      },
+      {
+        "name": "supplier_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "V-201",
+          "V-201",
+          "V-201"
+        ]
+      },
+      {
+        "name": "purchase_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 169,
+        "sample": [
+          "2024-07-22",
+          "2024-07-22",
+          "2024-08-26"
+        ]
+      },
+      {
+        "name": "qty",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "제품 EA / 원료 kg (본문 정의 기준)",
+        "unique": 215,
+        "sample": [
+          "1807.8",
+          "2337.8",
+          "2524.8"
+        ]
+      },
+      {
+        "name": "unit_price_fx",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 75,
+        "sample": [
+          "62.0000",
+          "62.0000",
+          "62.4043"
+        ]
+      },
+      {
+        "name": "currency",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "USD",
+          "USD",
+          "USD"
+        ]
+      },
+      {
+        "name": "fx_rate_applied",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 124,
+        "sample": [
+          "1325.68",
+          "1325.68",
+          "1326.28"
+        ]
+      },
+      {
+        "name": "amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 216,
+        "sample": [
+          "148586987",
+          "192148832",
+          "208966524"
+        ]
+      }
+    ],
+    "identifiers": [
+      "po_id",
+      "material_id",
+      "supplier_id"
+    ],
+    "dates": {
+      "purchase_date": {
+        "min": "2024-07-08",
+        "max": "2026-06-25"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/sku_inventory_ms (2).csv",
+    "filename": "sku_inventory_ms (2).csv",
+    "sha256": "820a4e96e2ae06b361a9b39d3de428af1c43c0a659c41e2dbd25a9b41c490ac5",
+    "bytes": 16949,
+    "modified_at": "2026-11-10T11:24:45.205541611",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Corevia 영업지원",
+    "description": "판매장려금 지급·승인 기록",
+    "rows": 240,
+    "column_count": 8,
+    "columns": [
+      {
+        "name": "rebate_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 240,
+        "sample": [
+          "RB-00001",
+          "RB-00002",
+          "RB-00003"
+        ]
+      },
+      {
+        "name": "agency_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 40,
+        "sample": [
+          "D-001",
+          "D-001",
+          "D-001"
+        ]
+      },
+      {
+        "name": "period_ym",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "2026-01",
+          "2026-02",
+          "2026-03"
+        ]
+      },
+      {
+        "name": "sales_performance_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 240,
+        "sample": [
+          "7296888",
+          "10679622",
+          "8794548"
+        ]
+      },
+      {
+        "name": "rebate_amount_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 240,
+        "sample": [
+          "925709",
+          "1451387",
+          "1189141"
+        ]
+      },
+      {
+        "name": "approval_status",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "승인",
+          "승인",
+          "승인"
+        ]
+      },
+      {
+        "name": "approver",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 16.667,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "영업지원팀",
+          "영업지원팀",
+          "영업지원팀"
+        ]
+      },
+      {
+        "name": "payment_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 18.333,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "2026-02-04",
+          "2026-03-09",
+          "2026-04-06"
+        ]
+      }
+    ],
+    "identifiers": [
+      "rebate_id",
+      "agency_id"
+    ],
+    "dates": {
+      "period_ym": {
+        "min": "2026-01-01",
+        "max": "2026-06-01"
+      },
+      "payment_date": {
+        "min": "2026-02-04",
+        "max": "2026-06-04"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/sku_weekly_sales_ms (2).csv",
+    "filename": "sku_weekly_sales_ms (2).csv",
+    "sha256": "86553f47628b0fa550af9b532b3d9ad5f1b778cc165e696544de34ae96dfed09",
+    "bytes": 1028062,
+    "modified_at": "2026-11-10T11:24:45.205868244",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "shipments",
+    "department": "영업·물류",
+    "description": "주문별 출하 실적",
+    "rows": 17987,
+    "column_count": 7,
+    "columns": [
+      {
+        "name": "shipment_id",
+        "meaning": "출하 식별자; SBL과 SH는 별도 체계",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 17987,
+        "sample": [
+          "SH-000001",
+          "SH-000002",
+          "SH-000003"
+        ]
+      },
+      {
+        "name": "order_id",
+        "meaning": "수주 식별자; 배치 연결 표에는 없음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 17987,
+        "sample": [
+          "SO-000001",
+          "SO-000002",
+          "SO-000003"
+        ]
+      },
+      {
+        "name": "ship_date",
+        "meaning": "출하일; 수주일과 구분",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 652,
+        "sample": [
+          "2024-01-12",
+          "2024-01-23",
+          "2024-01-01"
+        ]
+      },
+      {
+        "name": "customer_id",
+        "meaning": "기업 고객 식별자; customer_ref와 다른 체계",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 12,
+        "sample": [
+          "C-105",
+          "C-106",
+          "C-103"
+        ]
+      },
+      {
+        "name": "product_id",
+        "meaning": "Corevia 제품군 식별자; 개별 SKU 아님",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "PL-01",
+          "PL-01",
+          "PL-01"
+        ]
+      },
+      {
+        "name": "shipped_qty",
+        "meaning": "해당 출하 기록 수량",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "EA",
+        "unique": 8106,
+        "sample": [
+          "4963",
+          "8121",
+          "5635"
+        ]
+      },
+      {
+        "name": "revenue_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 17970,
+        "sample": [
+          "45580192",
+          "72358110",
+          "50568490"
+        ]
+      }
+    ],
+    "identifiers": [
+      "shipment_id",
+      "order_id",
+      "customer_id",
+      "product_id"
+    ],
+    "dates": {
+      "ship_date": {
+        "min": "2024-01-01",
+        "max": "2026-06-30"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "주문별 출하 실적"
+  },
+  {
+    "path": "04_원본데이터/strat_capacity_cv (2).csv",
+    "filename": "strat_capacity_cv (2).csv",
+    "sha256": "be05f5dd87eaa1443e95da0322cae5007ba89579af91aa3b3b512b5b5e6b30db",
+    "bytes": 557,
+    "modified_at": "2026-11-10T11:24:45.171094418",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Corevia 조달",
+    "description": "원료·공급계약 마스터",
+    "rows": 6,
+    "column_count": 9,
+    "columns": [
+      {
+        "name": "material_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "M-A",
+          "M-B",
+          "M-C"
+        ]
+      },
+      {
+        "name": "material_name",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "히알루론산",
+          "특허 활성성분",
+          "자외선차단제"
+        ]
+      },
+      {
+        "name": "sourcing_region",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "해외",
+          "해외",
+          "국내"
+        ]
+      },
+      {
+        "name": "currency",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "USD",
+          "USD",
+          "KRW"
+        ]
+      },
+      {
+        "name": "supplier_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "V-201",
+          "V-205",
+          "V-212"
+        ]
+      },
+      {
+        "name": "contract_type",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "연간 단가계약",
+          "2년 장기+MOQ+자동갱신·위약",
+          "분기 계약"
+        ]
+      },
+      {
+        "name": "is_exclusive",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "boolean",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "False",
+          "True",
+          "False"
+        ]
+      },
+      {
+        "name": "unit",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "kg",
+          "kg",
+          "kg"
+        ]
+      },
+      {
+        "name": "effective_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 1,
+        "sample": [
+          "2024-01-01",
+          "2024-01-01",
+          "2024-01-01"
+        ]
+      }
+    ],
+    "identifiers": [
+      "material_id",
+      "supplier_id"
+    ],
+    "dates": {
+      "effective_date": {
+        "min": "2024-01-01",
+        "max": "2024-01-01"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/strat_capex_plan_cv (2).csv",
+    "filename": "strat_capex_plan_cv (2).csv",
+    "sha256": "a4c6a68ca499fcd5667b45d4b4737cc7d46d430a685267e1f6eaaf54cf496bf6",
+    "bytes": 379,
+    "modified_at": "2026-11-10T11:24:45.171094418",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": "products",
+    "department": "생산",
+    "description": "제품군 마스터",
+    "rows": 6,
+    "column_count": 8,
+    "columns": [
+      {
+        "name": "product_id",
+        "meaning": "Corevia 제품군 식별자; 개별 SKU 아님",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "PL-01",
+          "PL-02",
+          "PL-03"
+        ]
+      },
+      {
+        "name": "product_name",
+        "meaning": "제품군 명칭",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "기초",
+          "더마",
+          "선케어"
+        ]
+      },
+      {
+        "name": "revenue_share_pct",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "% 여부는 정의 확인; pct는 %",
+        "unique": 6,
+        "sample": [
+          "30.0",
+          "20.0",
+          "12.0"
+        ]
+      },
+      {
+        "name": "market_growth_pct",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 1,
+        "unit": "% 여부는 정의 확인; pct는 %",
+        "unique": 6,
+        "sample": [
+          "3.0",
+          "18.0",
+          "7.0"
+        ]
+      },
+      {
+        "name": "main_material_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "M-A",
+          "M-B",
+          "M-C"
+        ]
+      },
+      {
+        "name": "primary_supplier_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 6,
+        "sample": [
+          "V-201",
+          "V-205",
+          "V-212"
+        ]
+      },
+      {
+        "name": "production_line",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "F1",
+          "F1",
+          "F2"
+        ]
+      },
+      {
+        "name": "is_f1_dedicated",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "boolean",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 2,
+        "sample": [
+          "False",
+          "True",
+          "False"
+        ]
+      }
+    ],
+    "identifiers": [
+      "product_id",
+      "main_material_id",
+      "primary_supplier_id"
+    ],
+    "dates": {},
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "제품군 마스터"
+  },
+  {
+    "path": "04_원본데이터/strat_celtonic_adjustment_analysis (2).csv",
+    "filename": "strat_celtonic_adjustment_analysis (2).csv",
+    "sha256": "c1696151998b68e3d8fa5e38e0d4f8fa91c0b4c45bffd743e4b59fd88cbf9df5",
+    "bytes": 1527,
+    "modified_at": "2026-11-10T11:24:45.233241796",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 마케팅",
+    "description": "캠페인 예산 기안",
+    "rows": 25,
+    "column_count": 6,
+    "columns": [
+      {
+        "name": "plan_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 25,
+        "sample": [
+          "PLAN-001",
+          "PLAN-002",
+          "PLAN-003"
+        ]
+      },
+      {
+        "name": "campaign_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 25,
+        "sample": [
+          "CMP-0003",
+          "CMP-0002",
+          "CMP-0001"
+        ]
+      },
+      {
+        "name": "requested_budget_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 25,
+        "sample": [
+          "18962703",
+          "16801646",
+          "14926612"
+        ]
+      },
+      {
+        "name": "expected_gmv_krw",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "number",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "KRW·부가세 제외",
+        "unique": 25,
+        "sample": [
+          "213330410",
+          "189018519",
+          "167924383"
+        ]
+      },
+      {
+        "name": "settlement_date",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "date",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 23,
+        "sample": [
+          "2026-07-27",
+          "2026-08-06",
+          "2026-08-17"
+        ]
+      },
+      {
+        "name": "contract_deadline",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "2026-07-17",
+          "2026-07-17",
+          "2026-07-17"
+        ]
+      }
+    ],
+    "identifiers": [
+      "plan_id",
+      "campaign_id"
+    ],
+    "dates": {
+      "settlement_date": {
+        "min": "2026-07-17",
+        "max": "2026-09-23"
+      }
+    },
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  },
+  {
+    "path": "04_원본데이터/strat_valuation_multiples (2).csv",
+    "filename": "strat_valuation_multiples (2).csv",
+    "sha256": "5a6eb2c4b5942ae6485f85c353b2b196ddda8ce8eee787661c7fbc8054fdc8af",
+    "bytes": 581,
+    "modified_at": "2026-11-10T11:24:45.261459589",
+    "encoding": "utf-8-sig",
+    "kind": "table",
+    "logical": null,
+    "department": "Masil 마케팅",
+    "description": "인플루언서 계약 유형 마스터",
+    "rows": 10,
+    "column_count": 6,
+    "columns": [
+      {
+        "name": "influencer_id",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 10,
+        "sample": [
+          "INF-001",
+          "INF-002",
+          "INF-003"
+        ]
+      },
+      {
+        "name": "influencer_name",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 10,
+        "sample": [
+          "혜인",
+          "초혜핏",
+          "토모카"
+        ]
+      },
+      {
+        "name": "tier",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "대형",
+          "중형",
+          "대형"
+        ]
+      },
+      {
+        "name": "primary_country",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "국내",
+          "국내",
+          "일본"
+        ]
+      },
+      {
+        "name": "platform",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 3,
+        "sample": [
+          "YouTube",
+          "Instagram",
+          "Instagram"
+        ]
+      },
+      {
+        "name": "fee_type",
+        "meaning": "업무 의미는 해당 원본 정의와 함께 확인; 자동 추정하지 않음",
+        "dtype": "string",
+        "null_pct": 0.0,
+        "invalid_count": 0,
+        "invalid_pct": 0.0,
+        "negative_count": 0,
+        "unit": "식별자·날짜·범주 또는 정의 확인",
+        "unique": 4,
+        "sample": [
+          "고정+성과",
+          "성과",
+          "고정"
+        ]
+      }
+    ],
+    "identifiers": [
+      "influencer_id"
+    ],
+    "dates": {},
+    "duplicate_count": 0,
+    "duplicate_pct": 0.0,
+    "warning": "이름·확장자로 의미를 추정하지 않음; 헤더 기반 검증",
+    "usage": "목록·품질 검증만"
+  }
+]

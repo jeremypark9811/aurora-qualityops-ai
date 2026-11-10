@@ -1,263 +1,212 @@
-# nextjs-axhub
+# Aurora QualityOps AI
 
-axhub 위에서 바로 굴러가는 **Next.js 16 + React 19 + Tailwind 4 + HeroUI v3** 템플릿이에요. 화면은 axhub 콘솔과 같은 디자인 시스템(`@jocoding-ax-partners/design-system`)으로 그려져요.
-**Claude Code** 로 바이브코딩하면서 axhub 에 한 줄 명령으로 배포할 수 있게 미리 세팅돼 있어요.
+> **Intelligent Quality & Supply Recovery Platform**
+> 품질 이슈의 접수부터 사람의 승인, 회수와 공급 복구까지 연결하는 운영 시스템
 
-> **axhub 로 할 수 있는 것** — DB · 파일 저장 · 알림/메일 · 웹훅 · 권한·공개 · 스테이징 · 도메인 · 로그·되돌리기 를 켜는 법은 [AXHUB.md](./AXHUB.md) 한 곳에 모아 뒀어요. 기능을 직접 만들기 전에 먼저 보세요.
+삼일PwC **AX 인재전쟁 W03 — 품질 이슈와 공급 복구**를 위한 웹 애플리케이션입니다. 가상 화장품 제조사 **Corevia Cosmetics**의 원본 자료를 근거로 판단하고, 위원회의 결정에 따라 영업·생산·품질·물류 작업과 운영 상태를 실제 데이터베이스에 반영합니다.
 
-## 0. 누가 쓰면 좋아요
+**Python 3.9+ · Flask · SQLAlchemy · Pandas · SQLite · 한국어 UI**
 
-비전공자, 비개발자, 기획자, 사무직, 디자이너 — 코드를 직접 한 줄도 안 짜더라도 AI 한테
-"이런 화면 만들어줘" 만 부탁하면 알아서 굴러가도록 디자인됐어요.
+| 실행 상태 | 분석 방식 | 검증 |
+| :--- | :--- | :--- |
+| 로컬 실행판 · Node 빌드 불필요 | 결정적 규칙 + 선택적 OpenAI 설명 | 자동 테스트 42개 통과 |
 
-## 1. 5분 안에 시작
+## 빠르게 시작하기
+
+### Windows PowerShell
+
+```powershell
+git clone https://github.com/jeremypark9811/aurora-qualityops-ai.git
+cd aurora-qualityops-ai
+
+py -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -X utf8 app.py
+```
+
+브라우저에서 **http://127.0.0.1:5000**을 여세요.
+
+이미 가상환경을 만든 현재 프로젝트에서는 마지막 실행 명령만 사용하면 됩니다. `py` 런처가 없다면 설치된 Python의 실행 경로로 가상환경을 생성하세요.
+
+<details>
+<summary>macOS / Linux</summary>
 
 ```bash
-# 1) 이 템플릿만 내 컴퓨터로 가져오기 (npm 깔려 있어야 함, Node 20+ 권장)
-npx degit jocoding-ax-partners/axhub-template/nextjs-axhub my-app
-cd my-app
-
-# 2) 의존성 설치
-npm install
-
-# 3) 환경변수 파일 만들기 (처음 한 번)
-npm run setup                 # .env.example → .env.local 복사. DB 는 기본으로 꺼져 있어요 (Docker 필요 없음)
-# DB·파일 저장·알림 같은 axhub 기능은 필요할 때 켜요 → AXHUB.md
-
-# 4) 로컬 서버 띄우기
-npm run dev
-# http://localhost:3000 에 접속
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python app.py
 ```
 
-## 2. 바이브코딩 흐름
+자동 테스트는 Windows / Python 3.9.12에서 검증했습니다.
 
-1. Claude Code 를 열어요.
-2. "메인 페이지에 입력 폼이랑 결과 카드 넣어줘" 같은 자연어 요청을 던져요.
-3. AI 가 `app/page.tsx` 같은 파일을 고쳐요.
-4. 저장하면 브라우저가 자동 새로고침 — 결과 확인.
-5. 마음에 들면 다음 기능, 안 들면 다시 부탁.
+</details>
 
-## 3. 개발(dev) 환경
+처음 실행하면 `instance/`에 로컬 DB와 세션키를 생성합니다. 접수·의결·작업 상태는 새로고침과 서버 재시작 후에도 유지됩니다. 실제 API 키 없이도 실행할 수 있습니다.
 
-로컬에서 `npm run dev` 로 도는 환경 이야기예요. 배포(프로덕션)와 뭐가 다른지도 여기서 정리해요.
+## 하나로 연결된 업무 흐름
 
-### 3-1. 핫리로드 (Fast Refresh)
-
-`npm run dev` 는 Turbopack dev 서버예요. 파일을 저장하면 **재시작 없이 즉시** 브라우저에 반영돼요
-(React 컴포넌트 상태도 대부분 유지). 별도 설정 필요 없어요.
-
-- 반영이 안 되거나 화면이 이상하게 꼬이면: dev 서버 끄고 `.next` 폴더 삭제 후 `npm run dev` 재시작.
-  (Mac/Linux: `rm -rf .next` · Windows PowerShell: `Remove-Item -Recurse -Force .next`)
-- `lib/db.ts` 의 DB 커넥션 풀은 핫리로드를 견디도록 dev 에서 재사용돼요 — 오래 개발해도 커넥션이 안 새요.
-
-### 3-2. 로컬 DB 다루기
-
-전부 npm 스크립트로 준비돼 있어요 (내부는 docker compose):
-
-| 명령 | 하는 일 |
-|------|---------|
-| `npm run setup` | `.env.local` 없으면 예시 복사 + Postgres 기동 (최초 1회용) |
-| `npm run db:up` | 로컬 Postgres 기동 (localhost:5432) |
-| `npm run db:down` | 정지 — **데이터는 유지**돼요 |
-| `npm run db:reset` | 정지 + **데이터 전부 삭제** 후 재기동 (초기화) |
-| `npm run db:psql` | 실행 중인 DB 에 psql 콘솔로 접속 |
-
-테이블은 `lib/db.ts` 의 `ensureSchema()` 가 자동 생성해요 (`CREATE TABLE IF NOT EXISTS`) —
-마이그레이션 파일이나 별도 명령 없이, 스키마를 고치고 저장하면 다음 요청 때 반영돼요.
-테이블 구조를 크게 바꿔서 꼬였다면 `npm run db:reset` 이 제일 빨라요.
-
-### 3-3. dev vs 프로덕션
-
-| | 로컬 dev (`npm run dev`) | 배포 (axhub) |
-|---|---|---|
-| 실행 방식 | Turbopack 즉석 컴파일 + 핫리로드 | `next build` standalone → `node server.js` |
-| `NODE_ENV` | `development` | `production` (Dockerfile 이 고정) |
-| DB | docker compose Postgres (`.env.local`) | axhub 발급 전용 DB (`DATABASE_URL` 자동 주입) |
-| 로그인 사용자 | 없음(문이 없음) → `'local-dev'` 폴백 | 문이 넘긴 헤더 → `me()` (`visitor.email`) |
-| gateway (`queryConnector`) | ❌ 세션 쿠키가 없어 미동작 | ✅ **회사 앱 주소에서만** (퍼블릭·커스텀 도메인 ❌) |
-
-- 로컬엔 axhub 문이 없어 방문자가 항상 익명이에요 — 사용자 키가 `'local-dev'` 로 폴백되고, 실제 로그인은 배포 후 확인하세요.
-- gateway(connector 조회)는 사용자 세션 쿠키가 필요해서 로컬에선 안 되고, 배포해도 **회사 앱 주소에서만** 동작해요 (§4-B).
-- 배포 전에 프로덕션 모드로 미리 검증하고 싶으면: `npm run build && npm start`.
-
-## 4. 데이터 저장 (표준 PostgreSQL)
-
-이 앱의 데이터는 **이 앱 전용 PostgreSQL** 에 저장해요. `lib/db.ts` 가 단일 진입점이고, 평범한 SQL 을 쓰면 돼요.
-**DB 는 기본으로 꺼져 있어요.** 켜는 순서(로컬·배포)는 [AXHUB.md §3 DB 켜기](./AXHUB.md#3-db-켜기) 를 따라요. 로컬은 `npm run db:up` + `.env.local` 의 `DATABASE_URL` 주석 해제, 배포는 `axhub.yaml` 의 `database:` 주석 해제 후 다시 배포 → axhub 가 `DATABASE_URL` 을 자동으로 넣어 줘요.
-
-```ts
-// 예: Server Action / Route Handler 안에서
-import { db, ensureSchema } from "@/lib/db";
-
-await ensureSchema();                                  // 테이블 정의는 lib/db.ts 에 (CREATE TABLE IF NOT EXISTS)
-// 값은 tagged-template 으로 — 자동 바인딩되어 SQL injection 안전.
-await db()`INSERT INTO todos (user_key, title) VALUES (${userKey}, ${title})`;
-const rows = await db()<{ id: string; title: string }[]>`
-  SELECT id::text, title FROM todos WHERE user_key = ${userKey} ORDER BY id DESC LIMIT 50`;
+```mermaid
+flowchart LR
+    A["SYSTEM<br/>클레임 접수"] --> B["SYSTEM<br/>원본·배치·출하 확인"]
+    B --> C["규칙 / AI<br/>계산·위험·대안"]
+    C --> D["HUMAN<br/>품질위원회 의결"]
+    D -->|승인| E["SYSTEM<br/>회수·영업·생산 작업"]
+    D -->|거절| F["SYSTEM<br/>원인 조사·재검사"]
+    E --> G["SYSTEM<br/>상태·감사 이력 저장"]
+    F --> G
+    G --> B
 ```
 
-사용자별로 데이터를 가르려면 테이블에 `user_key` 컬럼을 두고 로그인 사용자로 필터해요 (아래 §4-A).
+- **확정 검사와 고객 주장을 구분합니다.** 신규 주장이나 언론 보도를 확정 불량 수량에 더하지 않습니다.
+- **정책 계산은 규칙 엔진이 담당합니다.** 확정 수량 ÷ 배치 생산량을 계산하고 10% 기준을 검사합니다.
+- **회수 결정은 사람이 내립니다.** 품질위원회 권한·사유·접수자와 다른 수행자를 확인합니다.
+- **결정 이후 실제 작업이 생깁니다.** 부서 업무·공급 계획·배치 상태·감사 이력을 트랜잭션으로 저장합니다.
+- **다음 판단은 이전 상태를 읽습니다.** 이미 승인된 배치를 중복 회수하지 않습니다.
 
-> ⚠️ `lib/db.ts` · `lib/axhub-server.ts` 는 **Server-side 전용**이에요. `"use client"` 컴포넌트에서 import 하면 빌드가 깨져요.
+## 주요 화면
 
-### 4-A. 로그인 사용자 알기 (axhub 신원 계약)
+| 화면 | 할 수 있는 일 |
+| :--- | :--- |
+| 품질 운영 개요 | 운영 KPI, 원본/신규 클레임 추이, 우선 확인 작업 |
+| 원본 데이터 탐색 | 파일 검색, 컬럼·기간·품질·출처·관계 문서 확인 |
+| 클레임 관리 / 배치 상세 | 원본 선택·접수·필터, 연결 배치와 과거 이력 조회 |
+| AI 품질 분석 | 실제 수치, 불량률 계산, 규정, 대안과 미확인 정보 |
+| 업무 타임라인 | SYSTEM / AI / HUMAN 여섯 단계와 실제 처리 기록 |
+| 승인 센터 | 승인·거절·추가 정보 요청·보류 및 사유 기록 |
+| 부서 작업 센터 | 영업·생산·물류·품질 작업, 모의 회신과 상태 변경 |
+| 확장 분석 | 출하 추적 완전성과 반복 품질 이슈 경보 |
+| 감사 로그 | 수행자·시각·변경 전후·근거·연결 작업 조회 |
+| 시연 센터 | 정상·조건 변경·정보 부족·거절 상황 실행 |
 
-axhub 에 배포된 앱은 **허브에 "이 사람 누구야?" 라고 다시 묻지 않아요.** 앱 앞의 문(ingress 게이트)이 통과시킨 요청마다 사용자 정보를 헤더로 실어 주고, 앱은 그걸 **읽기만** 해요. 회사 앱(`{앱}.{회사}.axhub.ai`) · 퍼블릭 앱(`{앱}.axhub.app`) · 커스텀 도메인 모두 같은 계약이에요.
+### 직접 시연하기
 
-> 왜 허브에 묻지 않나요? 허브 로그인 쿠키는 `axhub.ai` 계열 주소에만 실려요. 퍼블릭·커스텀 도메인은 다른 주소라 브라우저가 쿠키를 안 보내니, 허브 `/api/v1/me` 나 `sdk.identity.me` 로 방문자를 알아내는 방식은 **구조적으로 안 돼요.** 문이 넘기는 헤더는 주소 종류와 무관해요.
+1. **시연 센터**에서 접수 담당 역할로 정상 시나리오를 실행합니다.
+2. **품질위원회** 역할로 바꾸고 접수자와 다른 이름을 입력합니다.
+3. 타임라인에서 근거를 확인하고 사유를 적어 승인합니다.
+4. **부서 작업 센터**에서 생성된 영업·생산 작업을 확인합니다.
+5. 생산팀의 모의 회신으로 가용량을 입력해 부족량·고객 배분 변경을 확인합니다.
 
-### ① 문이 넘기는 헤더 (앱이 사용자를 아는 계약)
+상단의 역할 전환은 **시연용 모의 권한**입니다. 실제 기업 인증이나 외부 시스템 처리를 뜻하지 않습니다. 자세한 순서는 [5분 시연 대본](docs/DEMO_SCRIPT.md)을 참고하세요.
 
-| 헤더 | 값 |
-|---|---|
-| `X-AxHub-User-ID` | 사용자 UUID. **빈 문자열 = 익명 = 정상 상태** |
-| `X-AxHub-User-Email` | 이메일 — **base64(UTF-8)**, 디코드해서 써요 |
-| `X-AxHub-User-Name` | 이름 — **base64(UTF-8)**, 디코드해서 써요 |
-| `X-AxHub-App-Role` | `owner` / `platform_admin` / `tenant_admin` / `app_member` / `tenant_member` / `guest` (모르는 값은 최소 권한으로) |
-| `X-AxHub-Is-Admin` | `true` / `false` |
-| `X-AxHub-Tenant-Slug` | 앱을 소유한 워크스페이스 슬러그 |
-| `X-AxHub-Surface` | `tenant`(회사·퍼블릭·커스텀 모두) / `admin` / `public` |
+## 두 가지 확장과 부서 연계
 
-값은 문이 **매 요청 덮어써요** — 클라이언트가 헤더를 흉내 내도 지워져요. 그래서 앱은 검증 없이 믿고 읽으면 돼요.
+| 기능 | 실제 운영에 주는 영향 |
+| :--- | :--- |
+| 출하 추적 완전성 | 고객 식별·날짜·수량이 부족하면 범위 확정을 보류하고 물류 확인 작업 생성. 회신 후 재분석 |
+| 반복 품질 이슈 경보 | 31일간 동일 제품·유형 3건 이상이면 품질 조사·추가 검사 작업 생성. 회수 자동 승인과 분리 |
+| 영업 공급 복구 | 고객 안내·납품 협의 작업과 고객별 공급 배분·부족량 갱신 |
+| 생산 재공급 검토 | 정상 재고·순가용량 확인, 부족 시 추가 생산 검토 작업과 영업 대안 갱신 |
 
-### 이 템플릿에서는
+반복 경보 임계값과 고객 배분 우선순위는 **시연 가정**으로 표시합니다. 원본 계약·승인 권한·생산 제약을 임의로 없애지 않습니다.
 
-서버는 요청 헤더를 직접 볼 수 있어요. `lib/axhub-server.ts` 의 `me()` 가 `next/headers` 의 `headers()` 에서 위 헤더를 읽어 객체로 돌려줘요. 허브 호출도, SDK 도 필요 없어요.
+## 실제 데이터와 출처
 
-```tsx
-// app/page.tsx (Server Component) 또는 Route Handler / Server Action
-import { me, loginUrl, logoutUrl } from "@/lib/axhub-server";
+과제에서 제공한 **가상 기업 데이터**입니다. 실제 고객·거래처 자료나 운영 비밀을 추가하지 마세요.
 
-export default async function Page() {
-  const visitor = await me();   // { authenticated, user_id, email, name, app_role, is_admin, tenant_slug, surface }
-  if (!visitor.authenticated) return <a href={await loginUrl("/")}>axhub 로 로그인</a>;   // 익명 = 정상 상태
-  const logout = await logoutUrl("/");                                                      // 회사 앱이면 null
-  return <p>환영합니다, {visitor.name || visitor.email}님 {logout ? <a href={logout}>로그아웃</a> : "(콘솔에서 로그아웃)"}</p>;
-}
+전체 원본은 **54개 파일(CSV 40개)**입니다. 여러 파일의 이름과 실제 내용이 달라 **실제 헤더와 본문으로 식별**합니다. CSV는 파이프(`|`)로 읽으며 원본을 수정하지 않습니다.
+
+| 확인된 의미 | 실제 파일 | 행 수 |
+| :--- | :--- | ---: |
+| 생산 배치 | [sales_meeting_notes_cv (2).md](<04_원본데이터/sales_meeting_notes_cv (2).md>) | 480 |
+| 품질 클레임·확정 검사 | [fin_ap_aging_ms (2).csv](<04_원본데이터/fin_ap_aging_ms (2).csv>) | 165 |
+| 배치 출하 추적 | [fin_cash_daily_ms (2).csv](<04_원본데이터/fin_cash_daily_ms (2).csv>) | 1,431 |
+| 품질 정책 | [fin_ar_aging_ms (2).csv](<04_원본데이터/fin_ar_aging_ms (2).csv>) | 문서 |
+| 불량률 계산 정의 | [id_conventions (2).md](<04_원본데이터/id_conventions (2).md>) | 문서 |
+| 승인 권한 | [calculation_definitions (2).md](<04_원본데이터/calculation_definitions (2).md>) | 문서 |
+
+예: `B-02-2602-01`은 **확정 불량 17,900 / 생산 150,745 ≈ 11.87%**입니다. 회수 요건 판정과 위원회의 실행 의결을 분리합니다.
+
+[데이터 사전](docs/DATA_DICTIONARY.md) · [관계·조인 검증](docs/DATA_RELATIONSHIPS.md) · [품질 검사](docs/DATA_QUALITY.md) · [원본과 가정](docs/ASSUMPTIONS.md) · [지표 계보](docs/DATA_LINEAGE.md)
+
+프로파일과 관계 문서를 다시 생성하려면:
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 -m scripts.write_docs
+.\.venv\Scripts\python.exe -X utf8 -m scripts.profile_data
 ```
 
-> `visitor.email`(또는 `user_id`)을 데이터 테이블의 `user_key` 로 쓰면 사용자별 격리가 돼요.
-> `lib/axhub-server.ts` 는 server-only — `"use client"` 컴포넌트에서 import 하면 빌드가 깨져요.
+## 선택적 OpenAI 연동
 
-### ② 로그인 버튼은 시작점으로
+[.env.example](.env.example)을 참고해 프로젝트 루트의 `.env`에 설정합니다. 기존 `.env`가 있다면 덮어쓰지 마세요.
 
-로그인 버튼 href 는 `{API_BASE}/custom-domain-auth/start?target=<현재 주소 전체>` 예요 (헬퍼 `loginUrl()`). 시작점이 주소가 회사·퍼블릭·커스텀 중 어느 것인지 알아서 판정하고, 로그인이 끝나면 `target` 으로 돌려보내요. 앱은 주소 종류를 몰라도 돼요.
-
-### ③ 앱 로그아웃은 이 앱 주소의 세션만 끊어요
-
-로그아웃 href 는 앱 주소의 `/__axhub/auth/logout?return_to=/` 예요 (헬퍼 `logoutUrl()`). **이 앱 주소의 세션만** 끊고 axhub 콘솔 로그인은 유지돼요. 그래서 "들어올 때 axhub 로그인 요구" 가 켜진 앱은 콘솔에 로그인된 사용자가 다시 자동으로 들어와요 — 정상이에요. 회사 앱에는 끊을 앱 세션이 없어서 헬퍼가 `null` 을 돌려줘요 → 버튼을 숨기고 "콘솔에서 로그아웃하세요" 로 안내해요.
-
-### ④ 콘솔 로그아웃은 앱 세션을 즉시 끊지 않아요
-
-콘솔에서 로그아웃해도 이미 열린 앱 주소의 세션은 최대 12시간 남아 있을 수 있어요. 반면 **접근 권한**(앱 비활성화·계정 정지·공개 범위 변경)은 문이 매 요청 판정하므로 즉시 반영돼요.
-
-### ⑤ 익명은 오류가 아니에요
-
-"들어올 때 로그인 요구" 가 꺼진 앱은 로그인 안 한 방문자도 들어와요. 그때 헤더는 전부 빈 값이고 헬퍼는 `authenticated: false` 를 돌려줘요. 이건 **"로그인 안 됨" 이라는 정상 상태**예요 — 오류 문구 대신 로그인 버튼을 보여주세요.
-
-### ⑥ 예약 경로
-
-`/__axhub/auth/*` 는 플랫폼이 가로채는 예약 경로예요 (콜백·로그아웃). **앱 라우트로 쓸 수 없어요.**
-
-### 4-B. Gateway query — 외부 DB / SaaS 조회
-
-> ⚠️ gateway 는 **사용자별 grant** 를 따지므로 사용자 세션 쿠키(`_hub_access`)로 허브를 불러야 해요. 브라우저는 그 쿠키를 회사 앱 주소(`{앱}.{회사}.axhub.ai`)에만 보내요 → **회사 앱에서만 동작**하고 퍼블릭(`axhub.app`)·커스텀 도메인 앱에선 안 돼요. 방문자 신원(§4-A)과는 별개예요.
-
-axhub Gateway 는 자체 PostgreSQL / MySQL / SaaS connector 를 안전하게 조회시켜 줘요. 모든 호출이 audit log 에
-기록되고, connector 권한 정책으로 게이트돼요. **직접 DB 접속 금지** — 항상 SDK 의 `gateway.query` 만.
-
-```ts
-// 예: app/api/employees/route.ts
-import { queryConnector } from "@/lib/axhub-server";
-
-export async function GET() {
-  // connector "이름" 으로 호출 — grant·session·UUID 스코프는 queryConnector 가 알아서 처리해요.
-  const res = await queryConnector<{ id: number; name: string }>({
-    connector: "my-db",          // connector 이름 (gateway.me.connectors() 의 .name) — 활성 grant 필요
-    sql: "SELECT id, name FROM employees WHERE active = $1 LIMIT $2",  // postgres 네이티브 $n placeholder — '?' 는 백엔드에서 500(internal_error)
-    params: [true, 10],          // ✅ 항상 parameterized · $1,$2 순서대로 (injection 방지)
-  });
-  return Response.json({ rows: res.rows, rowCount: res.rowCount });
-}
+```dotenv
+OPENAI_API_KEY=
+OPENAI_MODEL=gpt-4.1-mini
+HOST=127.0.0.1
+PORT=5000
 ```
 
-- `connector` 는 connector "이름" — `queryConnector` 가 `gateway.me.connectors()` 로 UUID 를 resolve 해요 (활성 grant 가 있는 connector 만 보여요). ⚠️ gateway 는 tenant 경로에 UUID 가 필요해 slug 기반 `makeTenant()` 로는 안 돼요 (helper 가 `me()` 로 tenant UUID 를 잡아줘요).
-- `connector` / `sql` 은 코드 상수 — 사용자 입력은 반드시 `params` 로 분리 (권한 우회·injection 방지). 결과 cap 은 SQL `LIMIT`.
-- **정책 deny 는 throw** — `try/catch` 로 `PermissionDeniedError` (정책 거부) / `UnauthenticatedError` (session 만료) / `NotFoundError` (grant 없음) 분기. in-band `res.allowed` 플래그는 더 이상 없어요. (SDK 6.x: grant 기반 session 모델.)
+- 키가 없으면 **규칙 기반 분석**이라고 표시합니다.
+- 키가 있으면 최소 수치와 제한된 설명만 전달하고 구조화 JSON 응답을 검증합니다.
+- AI는 위험 요약·대안 설명을 보조하며, 숫자·정책·승인 권한을 변경하지 않습니다.
+- 호출 실패·형식 오류는 규칙 기반으로 전환합니다. 실제 키를 사용한 성공 호출은 검증하지 않았습니다.
 
-## 5. axhub 에 배포
+## 테스트와 시연 초기화
 
-### A. Claude Code 사용자
-
-```
-/axhub:deploy
-```
-
-배포 미리보기 카드 → 동의 → 끝. 빌드 진행 상황 자동으로 한국어로 안내해줘요.
-
-### B. CLI 직접
-
-```bash
-# 한 번만: axhub 콘솔에서 앱 등록 후 슬러그 복사
-axhub apps list                                   # 내 앱 목록 · 슬러그 확인
-axhub deploy create --app my-app-slug --execute   # --execute 가 없으면 미리보기만 해요
-axhub deploy status --app my-app-slug --watch     # 진행 상황
-axhub deploy logs --app my-app-slug --follow      # 앱 로그 (안 뜰 때 원인 찾기)
+```powershell
+.\.venv\Scripts\python.exe -X utf8 -m pytest tests -q
 ```
 
-`axhub.yaml` 을 새로 쓰거나 고칠 때는 `axhub.yaml.example` 에 axhub.yaml 에서 쓸 수 있는 필드와 제약을 모두 적어뒀으니 먼저 참고하세요.
+**42개 자동 테스트**로 정상 처리, 조건 변경, 정보 부족 회신, 승인 거절, 계산 경계, 권한, 동시·중복 의결, DB 지속성과 원본 불변성을 검증했습니다. [검증 기록](docs/TEST_RESULTS.md)에 브라우저 확인 범위도 정리했습니다.
 
-빌드는 repo 의 `Dockerfile`(`output:"standalone"` → `node server.js`)로 떠요. `package-lock.json` 이 있으면 `npm ci` 로 잠긴 버전 그대로 설치하니, 패키지를 추가하거나 바꿨다면 바뀐 `package-lock.json` 도 함께 커밋하세요. 잠금 파일과 `package.json` 이 어긋나면 빌드가 실패해요.
+시연 데이터는 **품질팀 → 시연 센터 → 시연 데이터 초기화**에서 정리할 수 있습니다. 원본·실제 운영 접수·감사 이력은 보존하며, 같은 배치에 실제 운영 접수가 있으면 초기화를 막습니다.
 
-## 6. 환경변수 / 설정
+독립된 시연 DB를 사용하려면:
 
-| 변수 | 용도 |
-|------|------|
-| `DATABASE_URL` | 앱 데이터 PostgreSQL (런타임). 로컬은 docker compose, 배포는 axhub 주입 |
-| `DIRECT_DATABASE_URL` | 스키마 초기화/마이그레이션용 (직결). 로컬은 비우면 `DATABASE_URL` 로 폴백 |
-| `APPHUB_API_URL` | Hub API origin (`https://api.axhub.ai`) — 로그인/gateway |
-| `APPHUB_APP_SLUG` | 내 앱 슬러그 (`ax-talent-war-jeremy`) |
-| `APPHUB_TENANT` | 내 테넌트 슬러그 (`lounge`) |
+```powershell
+$env:QUALITYOPS_DATABASE_URL='sqlite:///instance/separate-demo.db'
+.\.venv\Scripts\python.exe -X utf8 app.py
+```
 
-`DATABASE_URL`/`DIRECT_DATABASE_URL` 은 DB 를 켜고 배포하면 axhub 가 **자동으로 넣어 줘요.** `APPHUB_*` 값은 axhub 로 앱을 만들 때(bootstrap) 코드의 `{{...}}` 자리에 **미리 채워져요** — 템플릿을 직접 내려받아 올렸다면 `axhub env set` 으로 넣어요. 로컬은 비워 두면 "로컬 실행 중" 으로 동작해요. axhub 연결에는 API key 가 없어요 — 인증은 들어온 요청의 세션 쿠키 포워딩으로.
+## 프로젝트 구조
 
-## 7. 자주 막히는 곳
+```text
+aurora-qualityops-ai/
+├── app.py                  # Flask 앱·REST API·서버 진입점
+├── qualityops/              # 원본 식별·모델·규칙·AI 보조
+├── templates/               # Jinja 화면
+├── static/                  # CSS·JavaScript
+├── tests/                   # 자동 테스트
+├── scripts/                 # 프로파일·문서·저장소 점검
+├── docs/                    # 설계·데이터·시연·검증 문서
+├── 04_원본데이터/            # 제공된 원본 자료, 읽기 전용 사용
+├── requirements.txt
+├── .env.example             # 값 없는 설정 예시
+└── instance/                # 로컬 DB·세션키, Git 제외
+```
 
-| 증상 | 해결 |
-|------|------|
-| `npm install` 실패 | Node 버전 20+ 인지 `node -v` 확인 |
-| DB 연결 실패 (`ECONNREFUSED ... 5432`) | Docker Desktop 실행 확인 후 `npm run db:up` |
-| `db:up` 이 `port is already allocated` | 5432 를 다른 Postgres 가 쓰는 중 — `docker-compose.dev.yml` 의 ports 를 `"5433:5432"` 로 바꾸고 `.env.local` 의 DATABASE_URL 포트도 5433 으로 |
-| 테이블/데이터가 꼬임 | `npm run db:reset` — ⚠️ 로컬 데이터 전부 삭제돼요 |
-| 저장해도 화면에 반영이 안 됨 | dev 서버 끄고 `.next` 폴더 삭제 후 `npm run dev` 재시작 (§3-1) |
-| `axhub deploy` 가 "앱을 못 찾아요" | `axhub apps` 로 슬러그 다시 확인 |
-| 빌드 통과한 것 같은데 페이지가 빈 화면 | Server Component 에서 `isAxhubConfigured()` 출력해서 설정 확인 |
-| `next/headers` import 에러 | `"use client"` 컴포넌트에서 `lib/axhub-server` 를 import 했는지 확인 — server 전용 |
-| `TenantSlugRequiredError` 떨어짐 | `sdk.apps.*` 처럼 flat 호출 말고 `makeTenant()` 거치세요 — tenant 슬러그 자동 주입 |
-| `AxHubClient requires tokenType` 에러 | 직접 `new AxHubClient({ token })` 만들 때 발생. 그냥 `makeAxhub()` 쓰세요 — tokenType 자동 |
-| 배포했는데 항상 "로그인하지 않았어요" | 정상일 수 있어요(§4-A ⑤). 로그인 버튼으로 시작점에 가 보세요. 로그인 뒤에도 그대로면 `/api/...` 가 아닌 페이지 요청에서 `headers()` 로 `x-axhub-user-id` 가 오는지 확인 |
-| `queryConnector` 가 401 / "멤버가 아니에요" | 퍼블릭·커스텀 도메인 앱에선 사용자 쿠키가 없어 미지원 — 회사 앱 주소에서 확인 |
-| Tailwind class 가 안 먹음 | Tailwind 4 는 설정 파일 없이 프로젝트 폴더를 알아서 훑어요. `node_modules` 안 패키지 클래스만 `app/axhub.css` 의 `@source` 로 추가돼 있어요 — 값이 없는 클래스(`text-gray-500` 대신 `text-muted`)인지 먼저 확인 |
+Python 앱과 관계없는 이전 Next.js 템플릿·의존성·빌드 파일은 정리했습니다. 협업 지침과 Axhub 참고 문서는 보존했습니다. 기존 Axhub 원격은 로컬 Git 설정에 남아 있으며, GitHub 업로드와 Axhub 재배포는 별개입니다.
 
-## 8. 관련 자료
+## 저장소에 포함하지 않는 것
 
-- [axhub 가이드](https://github.com/jocoding-ax-partners/axhub)
-- [Next.js 16 docs](https://nextjs.org/docs)
-- [Tailwind 4 docs](https://tailwindcss.com/docs)
-- [HeroUI v3 컴포넌트](https://v3.heroui.com/docs/react/components) — v2 문서와 섞지 마세요
+`.gitignore`는 실제 환경변수, 로컬 DB·세션키, 인증 파일·개인키, AI 도구의 비공개 설정·세션 기록, 가상환경·캐시·로그를 제외합니다. 설정 이름만 있는 `.env.example`은 포함합니다.
 
-## 신뢰 모델 (이 템플릿)
+업로드 전에 다음을 실행하세요. 점검기는 알려진 비밀값 패턴과 제외 규칙을 검사하며 **발견한 값 자체는 출력하지 않습니다**.
 
-이 (Next.js) 템플릿은 **server-side**.
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/check_repository.ps1
+```
 
-- **데이터**: `lib/db.ts` 의 `db()` / `ensureSchema()` 가 표준 PostgreSQL 에 붙어요. `DATABASE_URL`(런타임, `prepare:false`) ·
-  `DIRECT_DATABASE_URL`(마이그레이션). 로컬은 docker compose, 배포는 axhub 가 전용 DB 발급 + 주입.
-- **인증/식별**: `lib/axhub-server.ts` 의 `me()` / `loginUrl()` / `logoutUrl()` — axhub 문이 요청마다 실어 주는 `X-AxHub-*`
-  헤더를 `next/headers` 의 `headers()` 로 읽어요 (§4-A). 허브 API 에 다시 묻지 않아요. 정적 API key 안 써요.
-- **gateway(connector)**: 같은 파일의 `makeAxhub` / `makeTenant` / `makeGateway` / `queryConnector` — 들어온 요청의 `_hub_access` 쿠키를
-  `@ax-hub/sdk 6.x` JWT 로 박아 *그 사용자 자격*으로 호출해요. 사용자 쿠키가 실리는 **회사 앱 주소에서만** 동작(§4-B).
-  모듈-레벨 client 캐시 금지 — 매 요청마다 factory.
+이미 Git 이력에 들어간 비밀값은 ignore 규칙만으로 지워지지 않습니다. 실제 키가 유출된 경우에는 키 폐기·재발급과 이력 정리가 필요합니다.
 
-## 9. 라이선스
+## 문서와 제출 준비
 
-MIT — 마음껏 쓰세요.
+| 문서 | 내용 |
+| :--- | :--- |
+| [시스템 구조](docs/ARCHITECTURE.md) | 데이터 흐름·트랜잭션·AI와 사람의 경계 |
+| [업무 흐름](docs/WORKFLOW.md) | 승인 권한·상태·회신·종료 조건 |
+| [확장 기능](docs/EXTENSIONS.md) | 추적 완전성과 반복 이슈 탐지 |
+| [부서 영향](docs/CROSS_DEPARTMENT.md) | 영업·생산의 계획·작업 변화 |
+| [5분 시연 대본](docs/DEMO_SCRIPT.md) | 화면별 클릭 순서와 설명 |
+| [제출 초안](docs/SUBMISSION_NOTES.md) | 구현 범위·가정·설계 설명 초안 |
+
+### 현재의 한계
+
+- **로컬 실행판**입니다. 원격 지속 운영에는 PostgreSQL·실제 인증·마이그레이션이 필요합니다.
+- 제조 정상 재고·납기일·일별 생산 일정·생산능력 기간 단위는 원본에서 부족해 확인 대상으로 남겼습니다.
+- SBL 배치 출하와 SH 주문 출하의 ID가 연결되지 않아 주문·납기를 임의 귀속하지 않습니다.
+- 외부 이메일·ERP·실물 회수는 모의이며 내부 DB 처리만 실제입니다.
+- A04 원문과 실제 제출 6문항 제목은 미확인입니다. 제출 초안은 실제 양식과 대조해야 합니다.
+- 실제 AI 성공 호출, 영상 촬영, 대회 제출, Python 앱의 원격 배포는 미수행입니다.
+
+[공식 과제 페이지](https://axacademy.ai/axwar/samilpwc-1)

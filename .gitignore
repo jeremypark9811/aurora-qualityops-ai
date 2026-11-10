@@ -1,42 +1,84 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
+# Environments and local-only configuration
+.env
+.env.*
 !.env.example
+.envrc
+.venv/
+venv/
+env/
+.axhub/
 
-# vercel
-.vercel
+# Runtime data, sessions, database backups
+instance/
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+backups/
+dumps/
+*.dump
+*.backup
+logs/
+*.log
+*.pid
+*.seed
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Credentials and private keys
+*.key
+*.pem
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+credentials.json
+token.json
+tokens.json
+*service-account*.json
+*service_account*.json
+.aws/
+.ssh/
+
+# Private AI tool settings and session records (keep shareable skills)
+.claude/settings.local.json
+.claude/.credentials.json
+.claude/projects/
+.codex/hooks.json
+.codex/auth.json
+.codex/config.local.toml
+.codex/sessions/
+.agents/hooks.json
+.agents/settings.local.json
+.agents/sessions/
+
+# Generated caches, test results, build output
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage/
+build/
+dist/
+node_modules/
+.next/
+out/
+
+# Editor and operating-system state
+.vscode/*
+!.vscode/tasks.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
