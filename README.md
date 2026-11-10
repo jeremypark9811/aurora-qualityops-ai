@@ -8,6 +8,47 @@
 
 하나의 품질 이슈가 **어떤 데이터로 판단되었는지**, **누가 어떤 이유로 결정했는지**, **결정 이후 어느 부서가 무엇을 해야 하는지**를 같은 화면 흐름에서 추적할 수 있습니다.
 
+## 설치 및 실행
+
+Python이 설치된 환경에서 실행할 수 있습니다. 현재 검증한 환경은 **Windows / Python 3.9.12**입니다. 저장소를 내려받을 때 앱에서 사용하는 `04_원본데이터/` 폴더도 함께 보관하세요.
+
+### 처음 설치하는 경우 · Windows PowerShell
+
+```powershell
+git clone https://github.com/jeremypark9811/aurora-qualityops-ai.git
+cd aurora-qualityops-ai
+
+py -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -X utf8 app.py
+```
+
+Git을 사용하지 않는다면 GitHub의 **Code → Download ZIP**으로 내려받아 압축을 풀고, 해당 폴더에서 가상환경 생성 명령부터 실행하면 됩니다. `py` 명령을 사용할 수 없다면 설치된 Python의 `python` 명령이나 실행 파일 경로를 사용하세요.
+
+실행 후 브라우저에서 **http://127.0.0.1:5000**에 접속합니다. 처음 실행하면 로컬 데이터베이스와 세션키가 자동 생성되므로 별도 DB 초기화는 필요하지 않습니다. AI 연결 설정이 없어도 **규칙 기반 분석**으로 사용할 수 있습니다.
+
+### 설치 후 다시 실행하는 경우
+
+프로젝트 폴더에서 다음 명령만 실행합니다.
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 app.py
+```
+
+서버를 종료하려면 실행한 터미널에서 **Ctrl+C**를 누릅니다. 이미 서버가 실행 중이라면 다시 실행하지 않고 접속 주소를 열면 됩니다. 종료 후 다시 실행해도 저장된 클레임·승인·부서 작업 상태는 유지됩니다.
+
+### macOS / Linux
+
+```bash
+git clone https://github.com/jeremypark9811/aurora-qualityops-ai.git
+cd aurora-qualityops-ai
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python app.py
+```
+
+접속 주소는 동일합니다. macOS / Linux의 실행 명령은 안내용이며, 실제 동작 검증은 앞서 명시한 Windows 환경에서 진행했습니다.
+
 ## 어떤 업무를 해결하나요?
 
 품질 문제가 발생하면 담당자는 불량 여부와 영향 범위를 확인하는 동시에 고객 안내, 회수 심사, 대체 공급, 생산 일정 검토를 함께 진행해야 합니다. 부서마다 다른 자료와 판단 기준을 사용하면 같은 배치를 두고도 대응이 달라지거나, 의결 이후 실제 후속 처리가 누락될 수 있습니다.
